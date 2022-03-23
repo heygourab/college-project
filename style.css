@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(background_Image.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px); /* background blur*/
+}
+/* main container */
+.container {
+    width: 400px;
+    min-height: 400px;
+    border-radius: 25px;
+    padding: 45px 40px;background: rgba(27, 27, 27, 0.651);
+    backdrop-filter: saturate(180%) blur(10px);
+    background: blur(10px);
+}
+/* login_text */
+.container .SingIn_text {
+    color: rgb(225, 225, 225);
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: capitalize;
+}
+/* input_group */
+.container .login_with_email .input_group {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.container .login_with_email .input_group input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #adadad;
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: rgb(220, 220, 220);
+    border-radius: 30px;
+    background: transparent; /* transparent */
+    outline: none;
+    transition: .3s;
+}
+
+/* button container */
+.container .login_with_email .input_group .button {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    text-align: center;
+    border: none;
+    background:#3b7054;
+    outline: none;
+    border-radius: 30px;
+    text-transform: capitalize; 
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: rgb(220, 220, 220);
+    cursor: pointer; /* mouse poitner */
+    transition: .3s
+}
+/* button ripple effect*/
+.container .login_with_email .input_group .button:hover{
+    transition: translateY(-5px);
+    background: #3b9464
+}
+.container .login_register_text {
+    color: rgb(220, 220, 220);
+    text-align: center;
+}
+.login_register_text a{
+    text-decoration: none; /*remove underline */
+    color: #3b7054;
+    font-weight: 600
+}
+/* ripple effect */
+.login_register_text a:hover{
+    transition:  translatey(-5px);
+    color: #3b9464
+}
+
+.container .forget_password{
+    padding: 10px;
+    text-align: center;
+}
+
+.forget_password a{
+    text-decoration: none; /*remove underline */
+    color:#3b7054;
+    font-weight: 600
+}
+/* ripple effect */
+.forget_password a:hover{
+    transition:  translatey(-5px);
+    color: #3b9464
+}
