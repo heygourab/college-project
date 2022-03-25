@@ -4,9 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; 
 }
-
+/* body */
 body {
     width: 100%;
     min-height: 100vh;
@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(2px); /* background blur*/
+    backdrop-filter: blur(2px); /* background blur */
 }
 /* main container */
 .container {
@@ -37,13 +37,23 @@ body {
     display: block;
     text-transform: capitalize;
 }
+/* forget page text */
+.Forget_text{
+    color: rgb(225, 225, 225);
+    font-weight: 150;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: capitalize;
+}
 /* input_group */
 .container .login_with_email .input_group {
     width: 100%;
     height: 50px;
     margin-bottom: 25px;
 }
-
+/* input filed */
 .container .login_with_email .input_group input {
     width: 100%;
     height: 100%;
@@ -56,7 +66,6 @@ body {
     outline: none;
     transition: .3s;
 }
-
 /* button container */
 .container .login_with_email .input_group .button {
     display: block;
@@ -79,10 +88,12 @@ body {
     transition: translateY(-5px);
     background: #3b9464
 }
+/* register_page_text */
 .container .login_register_text {
     color: rgb(220, 220, 220);
     text-align: center;
 }
+/* registerpage_link*/
 .login_register_text a{
     text-decoration: none; /*remove underline */
     color: #3b7054;
@@ -94,18 +105,18 @@ body {
     color: #3b9464
 }
 
-.container .forget_password{
+.container .forgotpassword_link{
     padding: 10px;
     text-align: center;
 }
-
-.forget_password a{
+/* forgot password_link */
+.forgotpassword_link a{
     text-decoration: none; /*remove underline */
     color:#3b7054;
     font-weight: 600
 }
 /* ripple effect */
-.forget_password a:hover{
+.forgotpassword_link a:hover{
     transition:  translatey(-5px);
     color: #3b9464
 }

@@ -1,3 +1,23 @@
+<?php
+include 'config.php';
+session_start();
+error_reporting(0);
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = md5($_POST['password']);
+
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
+    if ($result->num_rows > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['fullname'] = $row['fullname'];
+        header("Location:dashboad.php");
+    } else {
+        echo "<script>alert('This Email or Password is invalid');</script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,23 +31,23 @@
 
 <body>
     <div class="container">
-        <form class="login_with_email">
+        <form action="" method="POST" class="login_with_email">
             <!--email form -->
             <p class="SingIn_text" style="text-align: 2rem; font-weight: 800;">Welcome Back!</p>
             <div class="input_group">
-                <input type="email_id" placeholder="Email" required>
+                <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
                 <!--email input placeholder-->
             </div>
             <div class="input_group">
-                <input type="password" placeholder="Password" required> <!-- password input placeholder-->
+                <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required> <!-- password input placeholder-->
             </div>
             <div class="input_group">
-                <button class="button">LOG IN</button>
+                <button class="button" name="submit">LOG IN</button>
             </div>
             <p class="login_register_text">
                 Don't have an account? <a href="register.php">Register Here!</a>
             </p>
-            <P class="forget_password"><a href="forgot_password.php">Forgot Password!</P> <!-- forgot_password -->
+            <P class="forgotpassword_link"><a href="forgot_password.php">Forgot Password!</P> <!-- forgot_password -->
         </form>
     </div>
 </body>
