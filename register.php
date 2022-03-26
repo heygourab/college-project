@@ -8,28 +8,29 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     $rpassword = md5($_POST['rpassword']);
+    $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
     if ($password == $rpassword) {
         $selectuser = mysqli_query($conn, "SELECT * FROM users WHERE username = '" . $_POST['username'] . "'");
         $selectemail = mysqli_query($conn, "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'");
         if (!mysqli_num_rows($selectuser) and !mysqli_num_rows($selectemail)) {
-            $sql = "INSERT INTO users(fullname, username, email, password)
-                    VALUES ('$fullname', '$username', '$email', '$password')";
+            $sql = "INSERT INTO users(fullname, username, email, password,token)
+                    VALUES ('$fullname', '$username', '$email', '$password', '$token')";
             $result = mysqli_query($conn, $sql);
             if (!$result) {
                 echo "<script>alert('Woops!,Something went wrong!!!');</script>";
             } else {
-                echo "<script>alert('Register Done, You can loging now!!!');</script>";
                 $username = ""; //for resetting user name
-				$email = ""; // for resetting user email
-				$_POST['password'] = ""; //for resetting password
-				$_POST['cpassword'] = ""; //for resetting password
+                $email = ""; // for resetting user email
+                $_POST['password'] = ""; //for resetting password
+                $_POST['cpassword'] = ""; //for resetting password
                 header("Location:index.php");
             }
         }
-        if (mysqli_num_rows($selectuser)) {
+        if (mysqli_num_rows($selectuser) and mysqli_num_rows($selectemail)) {
+            echo "<script>alert('This Username and Email already exists,Please try another Username!!!');</script>";
+        } else if (mysqli_num_rows($selectuser)) {
             echo "<script>alert('This Username already exists,Please try another Username!!!');</script>";
-        }
-        if (mysqli_num_rows($selectemail)) {
+        } else if (mysqli_num_rows($selectemail)) {
             echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
         }
     } else {

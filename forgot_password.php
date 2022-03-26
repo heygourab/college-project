@@ -1,16 +1,20 @@
 <?php
 session_start();
 error_reporting(0);
-
 include 'config.php';
-$email = $_POST['email'];
-$selectemail = mysqli_query($conn, "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'");
-if (mysqli_num_rows($selectemail)) {
-    echo "<script>alert('Done!');</script>";
-} else {
-    echo "<script>alert('Woops!,Email is not valid!!!');</script>";
-}
-?>
+
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $selectemail = mysqli_query($conn, "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'");
+    if (mysqli_num_rows($selectemail)) {
+        $userdata = mysqli_fetch_array($selectemail);
+        $token = $userdata['token'];
+        $header = "reset_password.php?token=$token ";
+        header("Location:$header");
+    } else {
+        echo "<script>alert('Please enter valid email address.');</script>";
+    }
+} ?>
 
 
 <!DOCTYPE html>
@@ -32,7 +36,7 @@ if (mysqli_num_rows($selectemail)) {
             <p class="Forget_text" style="text-align: 2rem; font-weight: 600;">Enter the email address<br>
                 associate with your account.</p>
             <div class="input_group">
-                <input type="email_id" placeholder="Email" name ="email" value="<?php echo $email; ?>" required>
+                <input type="email_id" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
                 <!--email-->
             </div>
             <div class="input_group">
