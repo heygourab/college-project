@@ -23,26 +23,7 @@ if (isset($_POST['submit'])) {
         } else {
             echo "<script>alert('Repeat Password Not Matched!!!');</script>";
         }
-    }
-
-    //     if (mysqli_num_rows($selectpassword)) {
-    //         // if ($password == $rpassword) {
-    //         //     $token  = $_GET['token'];
-    //         //     $updatequery = "update users set password='$password' where token = '$token'";
-    //         //     if (mysqli_query($conn, $updatequery)) {
-    //         //         echo "<script>alert('Done! Your password has been updated successfully.');</script>";
-    //         //         header("Location:index.php");
-    //         //     } else {
-    //         //         echo "<script>alert('Done! Your password update failed.');</script>";
-    //         //     }
-    //         // } else {
-    //         //     echo "<script>alert('Repeat Password Not Matched!!!');</script>";
-    //         // }
-    //         echo "<script>alert('this password s already exists');</script>";
-    //     } else {
-    //         echo "<script>alert('You can't use your current password!!!')</script>";
-    //     }
-    // }
+    }   //* fix 
 }
 ?>
 <!DOCTYPE html>
