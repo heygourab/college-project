@@ -8,7 +8,7 @@
 }
 /* body */
 body {
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(background_Image.jpg);
     background-position: center;
@@ -23,7 +23,8 @@ body {
     width: 400px;
     min-height: 400px;
     border-radius: 25px;
-    padding: 45px 40px;background: rgba(27, 27, 27, 0.651);
+    padding: 45px 40px;
+    background: rgba(27, 27, 27, 0.651);
     backdrop-filter: saturate(180%) blur(10px);
     background: blur(10px);
 }

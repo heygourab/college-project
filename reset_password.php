@@ -15,10 +15,11 @@ if (isset($_POST['submit'])) {
             $token  = $_GET['token'];
             $updatequery = "update users set password='$password' where token = '$token'";
             if (mysqli_query($conn, $updatequery)) {
-                echo "<script>alert('Done! Your password has been updated successfully.');</script>";
+                // echo "<script>alert('Done! Your password update done!!!');</script>"; //!fix
+                sleep(2);
                 header("Location:index.php");
             } else {
-                echo "<script>alert('Done! Your password update failed.');</script>";
+                echo "<script>alert('woops! Your password update failed!!!');</script>";
             }
         } else {
             echo "<script>alert('Repeat Password Not Matched!!!');</script>";
