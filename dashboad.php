@@ -21,6 +21,7 @@ if (!isset($_SESSION['fullname'])) {
 
 <body>
     <div class="container">
+
         <aside>
             <div class="top">
                 <div class="menu">
@@ -64,7 +65,7 @@ if (!isset($_SESSION['fullname'])) {
                     </a>
                     <!-- courses -->
                     <a href="./setting.php"><span class="material-icons-sharp">
-                        local_library
+                            local_library
                         </span>
                         <H3>Courses</H3>
                     </a>
@@ -88,6 +89,7 @@ if (!isset($_SESSION['fullname'])) {
             </div>
         </aside>
         <!-- End of Aside -->
+
         <main>
             <h1>Dashboard</h1>
             <div class="insights">
@@ -123,7 +125,7 @@ if (!isset($_SESSION['fullname'])) {
                 <div class="total-courses">
                     <span class="material-icons-sharp">
                         local_library
-                        </span>
+                    </span>
                     <div class=middle>
                         <div class="left">
                             <h3>Total Courses</h3>
@@ -133,6 +135,7 @@ if (!isset($_SESSION['fullname'])) {
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
                 <!-- End of Income -->
+
                 <!-- Total Income -->
                 <div class="students-count">
                     <span class="material-icons-sharp">
@@ -148,7 +151,207 @@ if (!isset($_SESSION['fullname'])) {
                 </div>
                 <!-- End of Income -->
             </div>
+            <!-- end of insights -->
+
+            <div class="recent-payments">
+                <h2>Recent Payments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Courses</th>
+                            <th>Semester</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <!-- php student database -->
+                    <tbody>
+                        <td>
+                            <h3>Gourab Sarkar</h3>
+                        </td>
+                        <td>
+                            <h3>BCA(H)</h3>
+                        </td>
+                        <td>
+                            <h3>6th</h3>
+                        </td>
+                        <td>
+                            <h3>₹ 21200</h3>
+                        </td>
+                        <td class="details">
+                            <h3>Details</h3>
+                        </td>
+                    </tbody>
+
+                    <tbody>
+                        <td>
+                            <h3>Bikram Roy</h3>
+                        </td>
+                        <td>
+                            <h3>BCA(H)</h3>
+                        </td>
+                        <td>
+                            <h3>6th</h3>
+                        </td>
+                        <td>
+                            <h3>₹ 21200</h3>
+                        </td>
+                        <td class="details">
+                            <h3>Details</h3>
+                        </td>
+                    </tbody>
+
+                    <tbody>
+                        <td>
+                            <h3>Souvik Roy</h3>
+                        </td>
+                        <td>
+                            <h3>BCA(H)</h3>
+                        </td>
+                        <td>
+                            <h3>6th</h3>
+                        </td>
+                        <td>
+                            <h3>₹ 21200</h3>
+                        </td>
+                        <td class="details">
+                            <h3>Details</h3>
+                        </td>
+                    </tbody>
+
+                    <tbody>
+                        <td>
+                            <h3>Prokash Saha</h3>
+                        </td>
+                        <td>
+                            <h3>BCA(H)</h3>
+                        </td>
+                        <td>
+                            <h3>6th</h3>
+                        </td>
+                        <td>
+                            <h3>₹ 21200</h3>
+                        </td>
+                        <td class="details">
+                            <h3>Details</h3>
+                        </td>
+                    </tbody>
+
+
+                    <tbody>
+                        <td>
+                            <h3>Random student1</h3>
+                        </td>
+                        <td>
+                            <h3>BCA(H)</h3>
+                        </td>
+                        <td>
+                            <h3>6th</h3>
+                        </td>
+                        <td>
+                            <h3>₹ 21200</h3>
+                        </td>
+                        <td class="details">
+                            <h3>Details</h3>
+                        </td>
+                    </tbody>
+
+
+                    <tbody>
+                        <td>
+                            <h3>Random sutdent2</h3>
+                        </td>
+                        <td>
+                            <h3>BCA(H)</h3>
+                        </td>
+                        <td>
+                            <h3>6th</h3>
+                        </td>
+                        <td>
+                            <h3>₹ 21200</h3>
+                        </td>
+                        <td class="details">
+                            <h3>Details</h3>
+                        </td>
+                    </tbody>
+
+                    <tbody>
+                        <td>
+                            <h3>Random sutdent3</h3>
+                        </td>
+                        <td>
+                            <h3>BCA(H)</h3>
+                        </td>
+                        <td>
+                            <h3>6th</h3>
+                        </td>
+                        <td>
+                            <h3>₹ 21200</h3>
+                        </td>
+                        <td class="details">
+                            <h3>Details</h3>
+                        </td>
+                    </tbody>
+                </table>
+                <!-- student php or pa -->
+                <a href="#">Show All</a>
+            </div>
         </main>
+        <!-- end of main -->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-dtn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="profile">
+                    <div class="info">
+                        <p>
+                            <b>
+                                <h2>Hello,
+                                    <?php echo $_SESSION['fullname'] ?>
+                                </h2>
+                            </b>
+                        </p>
+                        <small class="text-muted"> Admin</small>
+                    </div>
+                </div>
+            </div>
+            <!-- end of top bar -->
+
+            <div class="recent-update">
+                <h2>Recent Updates</h2>
+                <div class="update">
+                    <div class="message">
+                        <p>
+                            <b>New Student, </b>
+                            Random Student
+                        </p>
+                        <small class="text-muted"> Last 24 Hours</small>
+                    </div>
+                </div>
+                <div class="update">
+                    <div class="message">
+                        <p>
+                            <b>New Teacher, </b>
+                            Random Teacher
+                        </p>
+                        <small class="text-muted"> Last 24 Hours</small>
+                    </div>
+                </div>
+                <div class="update">
+                    <div class="message">
+                        <p>
+                            <b>New Payment, </b>
+                            Random Student's Payment Done
+                        </p>
+                        <small class="text-muted"> Last 24 Hours</small>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

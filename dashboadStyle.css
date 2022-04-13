@@ -3,14 +3,15 @@
 /*  root variable */
 :root {
     --color-active: #3b9464;
-    --color-hover: #25e36e;
+    --color-hover: #2b7d3fe2;
     --color-primary: #7380ec;
     --color-success: #41f1b6;
     --color-warning: #FF7782;
     --color-white: #fff;
     --color-info-light: #dce1ed;
-    --color-info-dark: #25252a;
-    --box-shadow: 0 2rem 3rem var(--color-info-dark);
+    --color-info-dark: #1c756cae;
+    --color-bottom: rgb(160, 160, 160);
+    --box-shadow: 0 1.5rem 1.5rem var(--color-info-dark);
 }
 
 * {
@@ -235,9 +236,10 @@ main .insights>div h1 {
     color: white;
     transition: all 300ms ease;
 }
-main .insights>div h1:hover{
+
+main .insights>div h1:hover {
     color: white;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 main .insights>div h2 {
@@ -252,6 +254,131 @@ main .insights>div h3 {
 
 main .insights>div .middle {
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
+
+}
+
+main .insights small {
+    margin-top: 1rem;
+    display: block;
+}
+
+/* recent orders */
+
+main .recent-payments {
+    margin-top: 1rem;
+}
+
+main .recent-payments h2 {
+    color: white;
+    margin-bottom: 0.8rem;
+}
+
+
+main .recent-payments table {
+    background: rgba(27, 27, 27, 0.651);
+    backdrop-filter: saturate(180%) blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    /* box-shadow: var(--box-shadow); */
+
+}
+
+main .recent-payments table th {
+    font-size: 20px;
+}
+
+main table tbody td {
+    height: 2.8rem;
+    border-bottom: 2px solid var(--color-active);
+    color: white;
+}
+
+main table tbody:last-child td {
+    border: none;
+}
+
+main table tbody td h3 {
+    transition: all 300ms ease;
+}
+
+main table tbody td h3:hover {
+    font-size: 15px;
+}
+
+main table tbody td.details h3 {
+    transition: all 300ms ease;
+}
+
+main table tbody td.details h3:hover {
+    font-size: 15px;
+    color: var(--color-active);
+    font-weight: bold;
+}
+
+
+main .recent-payments a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: white;
+    transition: all 300ms ease;
+}
+
+main .recent-payments a:hover {
+    font-size: 15px;
+    color: var(--color-active);
+    font-weight: bold;
+}
+
+/* right */
+.right .recent-payments {
+    margin-top: 1.4rem;
+}
+
+.right .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right .top button {
+    display: none;
+}
+
+.right .top .profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+    color: white;
+    padding-top: 1rem;
+    padding-right: 10px;
+}
+
+.right .recent-update {
+    margin-top: .5rem;
+    background: rgba(27, 27, 27, 0.651);
+    backdrop-filter: saturate(180%) blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .recent-update:hover {
+    box-shadow: none;
+}
+
+.right .recent-update h2 {
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+
+.right .recent-update .update .message {
+    color: white;
+    padding: 1.3px;
+    margin-bottom: 0.1rem;
 }
