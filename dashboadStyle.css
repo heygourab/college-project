@@ -9,9 +9,9 @@
     --color-warning: #FF7782;
     --color-white: #fff;
     --color-info-light: #dce1ed;
-    --color-info-dark: #1c756cae;
+    --color-info-dark: #4a937287;
     --color-bottom: rgb(160, 160, 160);
-    --box-shadow: 0 1.5rem 1.5rem var(--color-info-dark);
+    --box-shadow: 0 .5rem 1.5rem var(--color-info-dark);
 }
 
 * {
@@ -333,7 +333,13 @@ main .recent-payments a:hover {
     font-weight: bold;
 }
 
+
 /* right */
+
+.right {
+    height: .5vh;
+}
+
 .right .recent-payments {
     margin-top: 1.4rem;
 }
@@ -374,6 +380,11 @@ main .recent-payments a:hover {
 .right .recent-update h2 {
     margin-bottom: 0.5rem;
     color: white;
+    transition: all 300ms ease;
+}
+
+.right .recent-update h2:hover {
+    font-size: 22px;
 }
 
 
@@ -381,4 +392,80 @@ main .recent-payments a:hover {
     color: white;
     padding: 1.3px;
     margin-bottom: 0.1rem;
+}
+
+/* End of recent update */
+
+.right .recent-student {
+    margin-top: .8rem;
+}
+
+.right .recent-student h2 {
+    color: white;
+}
+
+
+
+.right .recent-student .student {
+    margin-top: .8rem;
+    background: rgba(27, 27, 27, 0.651);
+    backdrop-filter: saturate(180%) blur(10px);
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.right .recent-student .student:hover {
+    box-shadow: none;
+}
+
+.right .recent-student .student h3 {
+    color: white;
+}
+
+
+.right .recent-student .student .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.right .recent-student .student .icon {
+    display: flex;
+    padding: 0.6rem;
+    color: white;
+    border-radius: 50%;
+    background-color: var(--color-active);
+    transition: all 300ms ease;
+}
+
+.right .recent-student .student .icon:hover {
+    background: var(--color-hover);
+    transform: rotateY(180deg);
+}
+
+.right .recent-student .add-student {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px dashed var(--color-active);
+    border-radius: 20px;
+}
+
+.right .recent-student .add-student a{
+    transition: all 300ms ease;
+}
+.right .recent-student .add-student a:hover{
+    font-size: 15px;
+    color: var(--color-active);
+    font-weight: bold;
 }

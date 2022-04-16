@@ -69,12 +69,20 @@ if (!isset($_SESSION['fullname'])) {
                         </span>
                         <H3>Courses</H3>
                     </a>
+                    <!-- payments -->
+                    <a href="payment.php">
+                        <span class="material-icons-sharp">
+                            payments
+                        </span>
+                        <H3>Payments</H3>
+                    </a>
                     <!-- setting -->
                     <a href="./setting.php"><span class="material-icons-sharp">
                             settings
                         </span>
                         <H3>Settings</H3>
                     </a>
+
                     <!-- about -->
                     <a href="./about.php"><span class="material-icons-sharp">
                             info
@@ -294,7 +302,7 @@ if (!isset($_SESSION['fullname'])) {
                     </tbody>
                 </table>
                 <!-- student php or pa -->
-                <a href="#">Show All</a>
+                <a href="payment.php">Show All</a>
             </div>
         </main>
         <!-- end of main -->
@@ -350,10 +358,78 @@ if (!isset($_SESSION['fullname'])) {
                         <small class="text-muted"> Last 24 Hours</small>
                     </div>
                 </div>
+                <!-- end of recent updates -->
+
+            </div>
+            <!-- end of  recent update -->
+
+            <div class="recent-student">
+                <h2>Recent Students</h2>
+                <div class="students">
+                    <!-- student 1 -->
+                    <div class="student">
+                        <div class="icon">
+                            <span class="material-icons-sharp">school</span>
+                        </div>
+                        <div class="right">
+                            <div class="student-name">
+                                <h3>Gourab Sarkar</h3>
+                            </div>
+                            <div class="course-name">
+                                <h3>BCA(h)</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- student 2 -->
+                    <div class="student">
+                        <div class="icon">
+                            <span class="material-icons-sharp">school</span>
+                        </div>
+                        <div class="right">
+                            <div class="student-name">
+                                <h3>Gourab Sarkar</h3>
+                            </div>
+                            <div class="course-name">
+                                <h3>BCA(h)</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- student 3 -->
+                    <div class="student">
+                        <div class="icon">
+                            <span class="material-icons-sharp">school</span>
+                        </div>
+                        <div class="right">
+                            <div class="student-name">
+                                <h3>Gourab Sarkar</h3>
+                            </div>
+                            <div class="course-name">
+                                <h3>BCA(h)</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- student 4 -->
+                    <div class="student">
+                        <div class="icon">
+                            <span class="material-icons-sharp">school</span>
+                        </div>
+                        <div class="right">
+                            <div class="student-name">
+                                <h3>Gourab Sarkar</h3>
+                            </div>
+                            <div class="course-name">
+                                <h3>BCA(h)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- add student -->
+                <div class="add-student">
+                    <a href="studentadd.php">Add Student</a>
+                </div>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
