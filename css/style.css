@@ -10,7 +10,7 @@
 body {
     width: 100vw;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(background_Image.jpg);
+    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(https://github.com/heygourab/college-project/blob/master/image/background_Image.jpg);
     background-position: center;
     background-size: cover;
     display: flex;

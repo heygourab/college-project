@@ -9,7 +9,7 @@
     --color-warning: #FF7782;
     --color-white: #fff;
     --color-info-light: #dce1ed;
-    --color-info-dark: #4a937287;
+    --color-info-dark: #2e2e2e;
     --color-bottom: rgb(160, 160, 160);
     --box-shadow: 0 .5rem 1.5rem var(--color-info-dark);
 }
@@ -176,7 +176,6 @@ aside .sidebar a.active span {
 
 aside .sidebar a:hover {
     color: var(--color-active);
-
 }
 
 aside .sidebar a:hover span {
@@ -387,7 +386,6 @@ main .recent-payments a:hover {
     font-size: 22px;
 }
 
-
 .right .recent-update .update .message {
     color: white;
     padding: 1.3px;
@@ -403,8 +401,6 @@ main .recent-payments a:hover {
 .right .recent-student h2 {
     color: white;
 }
-
-
 
 .right .recent-student .student {
     margin-top: .8rem;

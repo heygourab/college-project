@@ -415,7 +415,7 @@ if (!isset($_SESSION['fullname'])) {
                         </div>
                         <div class="right">
                             <div class="student-name">
-                                <h3>Gourab Sarkar</h3>
+                                <h3>Bikram Roy</h3>
                             </div>
                             <div class="course-name">
                                 <h3>BCA(h)</h3>
