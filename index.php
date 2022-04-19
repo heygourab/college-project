@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include 'config/config.php';
 session_start();
 error_reporting(0);
 if (isset($_POST['submit'])) {
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['fullname'] = $row['fullname'];
-        header("Location:dashboad.php");
+        header("Location:main/dashboard.php");
     } else {
         echo "<script>alert('This Email or Password is invalid');</script>";
     }

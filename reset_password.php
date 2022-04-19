@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 
-include 'config.php';
+include 'config/config.php';
 if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
     $rpassword = md5($_POST['rpassword']);
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8"> <!-- utf-8 encoding -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href=style.css>
+    <link rel="stylesheet" type="text/css" href=css\style.css>
     <title>Reset Password</title>
 </head>
 

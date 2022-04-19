@@ -1,14 +1,22 @@
+<?php
+session_start();
+if (!isset($_SESSION['fullname'])) {
+    header("Location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
+    <title>Add Students</title>
     <!--icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <!-- css -->
-    <link rel="stylesheet" href="./dashboadStyle.css">
+    <link rel="stylesheet" href="../css/studentStyle.css">
 </head>
 
 <body>
@@ -26,19 +34,19 @@
             </div>
             <!-- sidebar -->
             <div class="sidebar">
-                <a href="./dashboad.php"><span class="material-icons-sharp">
+                <a href="./dashboard.php"><span class="material-icons-sharp">
                         dashboard
                     </span>
                     <H3>Dashboard</H3>
                 </a>
                 <!-- students -->
-                <a href="./students.php" class = "active"><span class="material-icons-sharp">
+                <a href="./students.php"><span class="material-icons-sharp">
                         school
                     </span>
                     <H3>Students</H3>
                 </a>
                 <!-- add student -->
-                <a href="./studentadd.php" ><span class="material-icons-sharp">
+                <a href="./studentadd.php" class="active"><span class="material-icons-sharp">
                         person_add
                     </span>
                     <H3>Add Student</H3>
@@ -54,12 +62,27 @@
                         </span>
                         <H3>Add Teacher</H3>
                     </a>
+                    <!-- courses -->
+                    <a href="./setting.php"><span class="material-icons-sharp">
+                            local_library
+                        </span>
+                        <H3>Courses</H3>
+                    </a>
+                    <!-- payments -->
+                    <a href="payment.php">
+                        <span class="material-icons-sharp">
+                            payments
+                        </span>
+                        <H3>Payments</H3>
+                    </a>
                     <!-- setting -->
                     <a href="./setting.php"><span class="material-icons-sharp">
                             settings
                         </span>
                         <H3>Settings</H3>
                     </a>
+
+                    <!-- about -->
                     <a href="./about.php"><span class="material-icons-sharp">
                             info
                         </span>

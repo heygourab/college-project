@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
@@ -16,7 +16,7 @@ if (!isset($_SESSION['fullname'])) {
     <!--icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <!-- css -->
-    <link rel="stylesheet" href="./dashboadStyle.css">
+    <link rel="stylesheet" href="../css/dashboardStyle.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@ if (!isset($_SESSION['fullname'])) {
             </div>
             <!-- sidebar -->
             <div class="sidebar">
-                <a href="./dashboad.php" class="active"><span class="material-icons-sharp">
+                <a href="./dashboard.php" class="active"><span class="material-icons-sharp">
                         dashboard
                     </span>
                     <H3>Dashboard</H3>
@@ -97,7 +97,6 @@ if (!isset($_SESSION['fullname'])) {
             </div>
         </aside>
         <!-- End of Aside -->
-
         <main>
             <h1>Dashboard</h1>
             <div class="insights">
@@ -306,7 +305,6 @@ if (!isset($_SESSION['fullname'])) {
             </div>
         </main>
         <!-- end of main -->
-
         <div class="right">
             <div class="top">
                 <button id="menu-dtn">
@@ -429,6 +427,7 @@ if (!isset($_SESSION['fullname'])) {
                 </div>
             </div>
         </div>
+        <!-- end of right -->
     </div>
 </body>
 

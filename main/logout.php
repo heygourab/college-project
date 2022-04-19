@@ -1,7 +1,7 @@
 <?php 
 session_start();
 session_destroy();
-header('Location: index.php'); // redrict to index page!!!
+header('Location: ../index.php'); // redrict to index page!!!
 ?>
 
 <!DOCTYPE html>
