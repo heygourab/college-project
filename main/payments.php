@@ -5,18 +5,17 @@ if (!isset($_SESSION['fullname'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
+    <title>Payments</title>
     <!--icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <!-- css -->
-    <link rel="stylesheet" href="../css/studentStyle.css">
+    <link rel="stylesheet" href="../css/paymentStyle.css">
 </head>
 
 <body>
@@ -40,7 +39,7 @@ if (!isset($_SESSION['fullname'])) {
                     <H3>Dashboard</H3>
                 </a>
                 <!-- students -->
-                <a href="./students.php" class="active"><span class="material-icons-sharp">
+                <a href="./students.php"><span class="material-icons-sharp">
                         school
                     </span>
                     <H3>Students</H3>
@@ -70,7 +69,7 @@ if (!isset($_SESSION['fullname'])) {
                     <H3>Courses</H3>
                 </a>
                 <!-- payments -->
-                <a href="./payments.php">
+                <a href="./payments.php" class="active">
                     <span class="material-icons-sharp">
                         payments
                     </span>
@@ -95,6 +94,7 @@ if (!isset($_SESSION['fullname'])) {
                     <H3>Logout!</H3>
                 </a>
             </div>
+
         </aside>
         <!-- End of Aside -->
     </div>

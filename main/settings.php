@@ -12,11 +12,11 @@ if (!isset($_SESSION['fullname'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
+    <title>Settings</title>
     <!--icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
     <!-- css -->
-    <link rel="stylesheet" href="../css/studentStyle.css">
+    <link rel="stylesheet" href="../css/settingsStyle.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@ if (!isset($_SESSION['fullname'])) {
                     <H3>Dashboard</H3>
                 </a>
                 <!-- students -->
-                <a href="./students.php" class="active"><span class="material-icons-sharp">
+                <a href="./students.php"><span class="material-icons-sharp">
                         school
                     </span>
                     <H3>Students</H3>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['fullname'])) {
                     <H3>Payments</H3>
                 </a>
                 <!-- setting -->
-                <a href="./settings.php"><span class="material-icons-sharp">
+                <a href="./settings.php" class="active"><span class="material-icons-sharp">
                         settings
                     </span>
                     <H3>Settings</H3>
