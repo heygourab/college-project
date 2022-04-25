@@ -112,7 +112,8 @@ if (!isset($_SESSION['fullname'])) {
                         <!-- student phonenumber -->
                         <div class="input-box">
                             <span class="details">Student's Contact Number</span>
-                            <input type="tel" placeholder="Student's Contact Number" required>
+                            <input type="tel" placeholder="Student's Contact Number" pattern="[0-9]{10}" maxlength="10"
+                                required>
                         </div>
                     </div>
                     <!-- gender-details -->
@@ -142,7 +143,6 @@ if (!isset($_SESSION['fullname'])) {
                         </div>
                     </div>
                     <!-- end of gender section-->
-
                     <div class="student-details">
                         <!-- student secondary-marks-->
                         <div class="input-box">
@@ -219,16 +219,31 @@ if (!isset($_SESSION['fullname'])) {
                                 <option value="West Bengal">West Bengal</option>
                             </select>
                         </div>
+                        <!-- student's pincode -->
                         <div class="input-box">
                             <span class="details">Student's Pincode</span>
                             <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6"
                                 placeholder="Student's Pincode (e.g: 733101)" required>
                         </div>
+                        <!-- student course -->
+                        <div class="input-box">
+                            <span class="details">Student's Course</span>
+                            <select name="course" id="course" class="form-control" required>
+                                <option value="BCA(H)">BCA(H)</option>
+                                <option value="BHM(H)">BHM(H)</option>
+                                <option value="BBA(H)">BBA(H)</option>
+                            </select>
+                        </div>
+                        <!-- submit-->
+                        <div class="input-box">
+                            <div class="btn-container">
+                                <button class="button" name="submit">SUBMIT</button>
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- submit-->
-                    <div class="btn-container">
-                        <button class="button" name="submit">SUBMIT</button>
-                    </div>
+
+
                 </form>
             </div>
         </main>
