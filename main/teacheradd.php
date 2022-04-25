@@ -97,6 +97,7 @@ if (!isset($_SESSION['fullname'])) {
             </div>
         </aside>
         <!-- End of Aside -->
+        
     </div>
 </body>
 

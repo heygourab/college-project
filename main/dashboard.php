@@ -10,13 +10,13 @@ if (!isset($_SESSION['fullname'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <!--icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
     <!-- css -->
-    <link rel="stylesheet" href="../css/dashboardStyle.css">
+    <link rel="stylesheet" href="../css/dashboardStyle.css" />
 </head>
 
 <body>
@@ -27,71 +27,50 @@ if (!isset($_SESSION['fullname'])) {
                     <!-- logo -->
                     <h2>Menu</h2>
                 </div>
-                <div class="close"><span class="material-icons-sharp">
-                        close
-                    </span>
+                <div class="close">
+                    <span class="material-icons-sharp"> close </span>
                 </div>
             </div>
             <!-- sidebar -->
             <div class="sidebar">
-                <a href="./dashboard.php" class="active"><span class="material-icons-sharp">
-                        dashboard
-                    </span>
+                <a href="./dashboard.php" class="active"><span class="material-icons-sharp"> dashboard </span>
                     <H3>Dashboard</H3>
                 </a>
                 <!-- students -->
-                <a href="./students.php"><span class="material-icons-sharp">
-                        school
-                    </span>
+                <a href="./students.php"><span class="material-icons-sharp"> school </span>
                     <H3>Students</H3>
                 </a>
                 <!-- add student -->
-                <a href="./studentadd.php"><span class="material-icons-sharp">
-                        person_add
-                    </span>
+                <a href="./studentadd.php"><span class="material-icons-sharp"> person_add </span>
                     <H3>Add Student</H3>
                 </a>
                 <!-- teachers -->
-                <a href="./teachers.php"><span class="material-icons-sharp">
-                        person
-                    </span>
+                <a href="./teachers.php"><span class="material-icons-sharp"> person </span>
                     <H3>Teachers</H3>
                 </a>
                 <!-- add teacher -->
-                <a href="./teacheradd.php"><span class="material-icons-sharp">
-                        person_add
-                    </span>
+                <a href="./teacheradd.php"><span class="material-icons-sharp"> person_add </span>
                     <H3>Add Teacher</H3>
                 </a>
                 <!-- courses -->
-                <a href="./courcses.php"><span class="material-icons-sharp">
-                        local_library
-                    </span>
+                <a href="./courcses.php"><span class="material-icons-sharp"> local_library </span>
                     <H3>Courses</H3>
                 </a>
                 <!-- payments -->
                 <a href="./payments.php">
-                    <span class="material-icons-sharp">
-                        payments
-                    </span>
+                    <span class="material-icons-sharp"> payments </span>
                     <H3>Payments</H3>
                 </a>
                 <!-- setting -->
-                <a href="./settings.php"><span class="material-icons-sharp">
-                        settings
-                    </span>
+                <a href="./settings.php"><span class="material-icons-sharp"> settings </span>
                     <H3>Settings</H3>
                 </a>
                 <!-- about -->
-                <a href="./about.php"><span class="material-icons-sharp">
-                        info
-                    </span>
+                <a href="./about.php"><span class="material-icons-sharp"> info </span>
                     <H3>About</H3>
                 </a>
                 <!-- logout -->
-                <a href="./logout.php"><span class="material-icons-sharp">
-                        logout
-                    </span>
+                <a href="./logout.php"><span class="material-icons-sharp"> logout </span>
                     <H3>Logout!</H3>
                 </a>
             </div>
@@ -102,10 +81,8 @@ if (!isset($_SESSION['fullname'])) {
             <div class="insights">
                 <!-- students count -->
                 <div class="students-count">
-                    <span class="material-icons-sharp">
-                        school
-                    </span>
-                    <div class=middle>
+                    <span class="material-icons-sharp"> school </span>
+                    <div class="middle">
                         <div class="left">
                             <h3>Total Students</h3>
                             <h1>550</h1>
@@ -116,10 +93,8 @@ if (!isset($_SESSION['fullname'])) {
                 <!-- End of Students count -->
                 <!-- Teachers Count -->
                 <div class="students-count">
-                    <span class="material-icons-sharp">
-                        person
-                    </span>
-                    <div class=middle>
+                    <span class="material-icons-sharp"> person </span>
+                    <div class="middle">
                         <div class="left">
                             <h3>Total Teachers</h3>
                             <h1>15</h1>
@@ -130,10 +105,8 @@ if (!isset($_SESSION['fullname'])) {
                 <!-- end of Teachers-count -->
                 <!-- Total Income -->
                 <div class="total-courses">
-                    <span class="material-icons-sharp">
-                        local_library
-                    </span>
-                    <div class=middle>
+                    <span class="material-icons-sharp"> local_library </span>
+                    <div class="middle">
                         <div class="left">
                             <h3>Total Courses</h3>
                             <h1>5</h1>
@@ -145,10 +118,8 @@ if (!isset($_SESSION['fullname'])) {
 
                 <!-- Total Income -->
                 <div class="students-count">
-                    <span class="material-icons-sharp">
-                        account_balance
-                    </span>
-                    <div class=middle>
+                    <span class="material-icons-sharp"> account_balance </span>
+                    <div class="middle">
                         <div class="left">
                             <h3>Total Income</h3>
                             <h1>₹ 10,000</h1>
@@ -244,7 +215,6 @@ if (!isset($_SESSION['fullname'])) {
                         </td>
                     </tbody>
 
-
                     <tbody>
                         <td>
                             <h3>Random student1</h3>
@@ -262,7 +232,6 @@ if (!isset($_SESSION['fullname'])) {
                             <h3>Details</h3>
                         </td>
                     </tbody>
-
 
                     <tbody>
                         <td>
@@ -303,20 +272,20 @@ if (!isset($_SESSION['fullname'])) {
                 <!-- student php or pa -->
                 <a href="payment.php">Show All</a>
             </div>
+            <!-- end of recent-payments -->
         </main>
         <!-- end of main -->
         <div class="right">
             <div class="top">
                 <button id="menu-dtn">
-                    <span class="material-icons-sharp">
-                        menu
-                    </span>
+                    <span class="material-icons-sharp"> menu </span>
                 </button>
                 <div class="profile">
                     <div class="info">
                         <p>
                             <b>
-                                <h2>Hello,
+                                <h2>
+                                    Hello,
                                     <?php echo $_SESSION['fullname'] ?>
                                 </h2>
                             </b>
@@ -357,7 +326,6 @@ if (!isset($_SESSION['fullname'])) {
                     </div>
                 </div>
                 <!-- end of recent updates -->
-
             </div>
             <!-- end of  recent update -->
 
