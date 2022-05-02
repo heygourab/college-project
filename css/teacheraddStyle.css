@@ -1,188 +1,295 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /*  root variable */
 :root {
-    --color-active: #3b9464;
-    --color-hover: #2b7d3fe2;
-    --color-primary: #7380ec;
-    --color-success: #41f1b6;
-    --color-warning: #FF7782;
-    --color-white: #fff;
-    --color-info-light: #dce1ed;
-    --color-info-dark: #2e2e2e;
-    --color-bottom: rgb(160, 160, 160);
-    --box-shadow: 0 .5rem 1.5rem var(--color-info-dark);
+  --color-active: #3b9464;
+  --color-hover: #2b7d3fe2;
+  --color-primary: #7380ec;
+  --color-success: #41f1b6;
+  --color-warning: #ff7782;
+  --color-white: #fff;
+  --color-info-light: #dce1ed;
+  --color-info-dark: #2e2e2e;
+  --color-bottom: rgb(160, 160, 160);
+  --box-shadow: 0 0.5rem 1.5rem var(--color-info-dark);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    appearance: none;
-    border: none;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  appearance: none;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 body {
-    width: 100vw;
-    min-height: 100vh;
-    font-family: Poppins, sans-serif;
-    font-size: 0.88rem;
-    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../images/dashbg.png);
-    background-position: center;
-    background-size: cover;
-    user-select: none;
-    overflow-x: hidden;
-    display: flex;
-    backdrop-filter: blur(2px);
-    /* background blur */
+  width: 100vw;
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  font-size: 0.88rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/dashbg.png);
+  background-position: center;
+  background-size: cover;
+  user-select: none;
+  overflow-x: hidden;
+  display: flex;
+  backdrop-filter: blur(2px);
+  /* background blur */
 }
 
 .container {
-    display: grid;
-    width: 96%;
-    margin: 0 auto;
-    gap: 1.8rem;
-    grid-template-columns: 14rem auto 23rem;
+  display: grid;
+  width: 96%;
+  margin: 0 auto;
+  gap: 1.8rem;
+  grid-template-columns: 14rem auto 23rem;
 }
 
 a {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 h1 {
-    font-weight: 800;
-    font-size: 1.8rem;
+  font-weight: 800;
+  font-size: 1.8rem;
 }
 
 h2 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 h3 {
-    font-size: 0.87rem;
+  font-size: 0.87rem;
 }
 
 h4 {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 h5 {
-    font-size: 0.77rem;
+  font-size: 0.77rem;
 }
 
 small {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 .text-muted {
-    color: var(--color-info-light)
+  color: var(--color-info-light);
 }
 
 aside {
-    height: 100vh;
+  height: 100vh;
 }
 
 aside .top {
-    /* background: white; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.4rem;
-    color: var(--color-white)
+  /* background: white; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+  color: var(--color-white);
 }
 
 aside .menu {
-    width: 2rem;
-    height: 2rem;
-    margin-left: 30%;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 30%;
 }
 
 aside .close {
-    display: none
+  display: none;
 }
 
 /* side bar  */
 
 aside .sidebar {
-    display: flex;
-    flex-direction: column;
-    height: 88vh;
-    position: relative;
-    top: 1rem;
-    border-radius: 20px;
-    padding: 10px;
-    background: rgba(27, 27, 27, 0.651);
-    backdrop-filter: saturate(180%) blur(10px);
-    /* background: blur(10px); */
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  position: relative;
+  top: 1rem;
+  border-radius: 20px;
+  padding: 10px;
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  /* background: blur(10px); */
 }
 
 aside h3 {
-    font-weight: 500;
-    transition: all 300ms ease;
+  font-weight: 500;
+  transition: all 300ms ease;
 }
 
 aside .sidebar a {
-    display: flex;
-    color: var(--color-white);
-    margin-left: 2rem;
-    gap: 1rem;
-    align-items: center;
-    position: relative;
-    height: 3.7rem;
-    transition: all 300ms ease;
+  display: flex;
+  color: var(--color-white);
+  margin-left: 2rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  height: 3.7rem;
+  transition: all 300ms ease;
 }
 
 aside .sidebar a span {
-    font-size: 1.6rem;
-    transition: all 500ms ease;
+  font-size: 1.6rem;
+  transition: all 500ms ease;
 }
 
 /* logout */
 aside .sidebar a:last-child {
-    position: absolute;
-    bottom: 2rem;
-    width: 75%
-        /* bug 196 X 51.8 --- width: 100% */
+  position: absolute;
+  bottom: 2rem;
+  width: 75%;
+  /* bug 196 X 51.8 --- width: 100% */
 }
 
 aside .sidebar a.active {
-    background: rgba(27, 27, 27, 0.651);
-    color: var(--color-active);
-    margin-left: 0;
-    border-radius: 5px;
+  background: rgba(27, 27, 27, 0.651);
+  color: var(--color-active);
+  margin-left: 0;
+  border-radius: 5px;
 }
 
 aside .sidebar a.active:before {
-    content: '';
-    width: 6px;
-    height: 100%;
-    background: var(--color-active);
-    border-radius: 5px;
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--color-active);
+  border-radius: 5px;
 }
 
 aside .sidebar a.active span {
-    color: var(--color-active);
-    margin-left: calc(1rem - 3px);
+  color: var(--color-active);
+  margin-left: calc(1rem - 3px);
 }
 
 /* subtract 6px for it to align wit the rest of the icons */
 
 aside .sidebar a:hover {
-    color: var(--color-active);
+  color: var(--color-active);
 }
 
 aside .sidebar a:hover span {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 aside .sidebar a:hover h3 {
-    margin-top: 1rem;
-    font-size: medium;
+  margin-top: 1rem;
+  font-size: medium;
+}
+
+/* end of aside */
+
+main h1 {
+  margin-top: 1rem;
+  color: white;
+  font-weight: 800;
+}
+.s-form {
+  display: flex;
+  margin-top: 0.7rem;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: var(--box-shadow);
+}
+
+.s-form form .student-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form .student-details .input-box {
+  /* margin: 0px 0 5px 0; this for grap between input*/
+  width: calc(100% / 2 - 20px);
+}
+
+.student-details .input-box .details {
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: block;
+  padding-left: 5px;
+  /* display block for fix margin */
+  transition: all 300ms ease;
+}
+.student-details .input-box .details:hover {
+  font-size: 15px;
+}
+
+.student-details .input-box input {
+  height: 45px;
+  width: 100%;
+  border: 2px solid #adadad;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: rgb(220, 220, 220);
+  border-radius: 20px;
+  background: transparent; /* transparent */
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+  transition: all 300ms ease;
+}
+
+.student-details .input-box select {
+  height: 45px;
+  width: 100%;
+  border: 2px solid #adadad;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: rgb(220, 220, 220);
+  border-radius: 20px;
+  background: transparent; /* transparent */
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+  transition: all 300ms ease;
+}
+
+.student-details .input-box input:focus {
+  border-color: var(--color-active);
+}
+
+.btn-container {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+form .btn-container .button {
+  display: block;
+  width: 25%;
+  padding: 10px 10px;
+  text-align: center;
+  border: none;
+  background: #3b7054;
+  outline: none;
+  border-radius: 30px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgb(220, 220, 220);
+  cursor: pointer; /* mouse poitner */
+  transition: all 300ms ease;
+}
+
+form .btn-container .button:hover {
+  transition: translateY(-5px);
+  background: #3b9464;
 }
