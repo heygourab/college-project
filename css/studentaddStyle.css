@@ -114,14 +114,13 @@ aside .close {
 aside .sidebar {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 90.5vh;
   position: relative;
   top: 1rem;
   border-radius: 20px;
   padding: 10px;
   background: rgba(27, 27, 27, 0.651);
   backdrop-filter: saturate(180%) blur(10px);
-  /* background: blur(10px); */
 }
 
 aside h3 {
@@ -198,6 +197,7 @@ main h1 {
 .s-form {
   display: flex;
   margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
   border-radius: 10px;
   padding: 10px;
   background: rgba(27, 27, 27, 0.651);
@@ -217,18 +217,18 @@ form .student-details .input-box {
 }
 
 .student-details .input-box .details {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: white;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   display: block;
   padding-left: 5px;
   /* display block for fix margin */
   transition: all 300ms ease;
 }
 .student-details .input-box .details:hover {
-  font-size: 15px;
+  color: var(--color-active);
 }
 
 .student-details .input-box input {
@@ -261,7 +261,6 @@ form .student-details .input-box {
   transition: all 300ms ease;
 }
 
-
 .student-details .input-box input:focus {
   border-color: var(--color-active);
 }
@@ -269,31 +268,119 @@ form .student-details .input-box {
 .student-details .input-box select:focus {
   border-color: var(--color-active);
 }
-.btn-container {
-  margin-top: 8px;
+
+/* right */
+.right {
+  height: 0.5vh;
+  /* text-align: center; */
+}
+
+.right .top {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: end;
+  gap: 2rem;
 }
 
-form .btn-container .button {
-  display: block;
-  width: 25%;
-  padding: 10px 10px;
-  text-align: center;
+.right .top button {
+  display: none;
+}
+
+.right .top .profile {
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+  color: white;
+  padding-top: 1rem;
+  padding-right: 10px;
+}
+
+.right .btn-container {
+  padding-left: 5rem;
+  display: flex;
+}
+
+.right .btn-container .button {
+  min-width: 200px;
+  min-height: 50px;
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--color-active);
+  background: linear-gradient(
+    90deg,
+    var(--color-active) 0%,
+    var(--color-hover) 100%
+  );
   border: none;
-  background: #3b7054;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px var(--box-shadow);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
   outline: none;
-  border-radius: 30px;
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: rgb(220, 220, 220);
-  cursor: pointer; /* mouse poitner */
-  transition: all 300ms ease;
+  /* position: relative; */
+  padding: 10px;
+  position: absolute;
+  bottom: 5rem;
 }
 
-form .btn-container .button:hover {
-  transition: translateY(-5px);
-  background: #3b9464;
+.right .btn-container button::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: calc(200px + 12px);
+  min-height: calc(50px + 12px);
+  border: 3px solid var(--color-success);
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.right .btn-container .button:hover,
+.button:focus {
+  color: white;
+  transform: translateY(-2px);
+}
+
+.right .btn-container button:hover::before,
+button:focus::before {
+  opacity: 1;
+}
+
+.right .btn-container button::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid var(--color-success);
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.right .btn-container button:hover::after,
+button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 175px;
+    height: 175px;
+    opacity: 0;
+  }
 }

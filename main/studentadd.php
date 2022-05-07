@@ -8,38 +8,53 @@ if (!isset($_SESSION['fullname'])) {
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname']; //first name 
     $lname = $_POST['lname']; //last name
-
     $fullname = $fname . ' ' . $lname; // fullname
     $fathername = $_POST['fathername']; //fathername
     $mothername = $_POST['mothername']; //mothername
     $email = $_POST['email']; //email
     $phonenumber = $_POST['phonenumber']; //phonenumber
     $gender = $_POST['gender']; //gender 
+    $dob = $_POST['dob'];
     $course = $_POST['course']; //course 
     $sm =  $_POST['secondary-mark']; //secondary-mark
-    $smp = $_POST['secondary-percentage']; //secondary-percentage
+    // $smp = $_POST['secondary-percentage']; //secondary-percentage
     $hs = $_POST['higher-secondary-mark']; //higher-secondary-mark
-    $hsp = $_POST['higher-secondary-percentage']; //higher-secondary-percentage
+    // $hsp = $_POST['higher-secondary-percentage']; //higher-secondary-percentage
     $year = $_POST['passout-year']; //passout-year
     $board = $_POST['board']; //board
     $state = $_POST['state']; //state
     $pin = $_POST['pin']; //pincode
+    $city = $_POST['city']; //city
     $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
     $selectphone = mysqli_query($conn, "SELECT * FROM students WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM students WHERE email = '" . $_POST['email'] . "'"); //email
 
-    if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
-        $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,course,secondary_mark)
-                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$course','$secondary_mark')";
+    $smp = $sm / 700 * 100 ; 
+    $hsp = $hsp / 500 * 100;
+    
+    if ($rightsmp == $smp){
+        echo "<script>alert('Secondary Percentage wrong? Please Insert: $rightsmp ');</script>";
+    }
+
+    if (mysqli_num_rows($selectphone) and mysqli_num_rows($selectemail)) {
+        $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,dob,course,secondary_mark,	secondary_percentage,higher_secondary_mark,higher_secondary_percentage,passout_year,passout_board,state,pin,city,token)
+                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$city','$token')";
         $result = mysqli_query($conn, $sql);
         if (!$result) {
             echo "<script>alert('Woops!,Something went wrong!!!');</script>";
         } else {
             echo "<script>alert('done!!!');</script>";
         }
+    } else  if (mysqli_num_rows($selectphone) and mysqli_num_rows($selectemail)) {
+        echo "<script>alert('This Username and Email already exists,Please try another Username!!!');</script>";
+    } else if (mysqli_num_rows($selectphone)) {
+        echo "<script>alert('This Contact Number already exists,Please try another Contact Number!!!');</script>";
+    } else if (mysqli_num_rows($selectemail)) {
+        echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
+    } else {
+        echo "<script>alert('Done!!! 😊 $right_smp');</script>";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -117,7 +132,7 @@ if (isset($_POST['submit'])) {
         <main>
             <h1>Add Student Details</h1>
             <div class="s-form">
-                <form action="" method="POST" class="form">
+                <form action="" method="POST" class="form" id="student-form">
                     <div class="student-details">
                         <!-- student first name -->
                         <div class="input-box">
@@ -147,8 +162,7 @@ if (isset($_POST['submit'])) {
                         <!-- student phonenumber -->
                         <div class="input-box">
                             <span class="details">Student's Contact Number</span>
-                            <input type="text" placeholder="Student's Contact Number" pattern="[0-9]{10}" maxlength="10"
-                                name="phonenumber" required>
+                            <input type="text" placeholder="Student's Contact Number" pattern="[0-9]{10}" maxlength="10" name="phonenumber" required>
                         </div>
                         <!-- gender-details -->
                         <div class="input-box">
@@ -176,38 +190,32 @@ if (isset($_POST['submit'])) {
                         <!-- student secondary-marks-->
                         <div class="input-box">
                             <span class="details">Student's Secondary Marks</span>
-                            <input type="number" placeholder="Student's Secondary Marks" min="1" max="700"
-                                name="secondary-mark" required>
+                            <input type="number" placeholder="Student's Secondary Marks" min="1" max="700" name="secondary-mark" required>
                         </div>
                         <!-- Student Secondary Percentage -->
                         <div class="input-box">
                             <span class="details">Student's Secondary Percentage</span>
-                            <input type="number" placeholder="Student's Secondary Percentage" min="1" max="100"
-                                name="secondary-percentage" required>
+                            <input type="number" placeholder="Student's Secondary Percentage" min="1" max="100" name="secondary-percentage" required>
                         </div>
                         <!-- Student's Highest Secondary Marks -->
                         <div class="input-box">
                             <span class="details">Student's Highest Secondary Marks</span>
-                            <input type="number" placeholder="Student's Higher Secondary Marks" min="1" max="500"
-                                name="higher-secondary-marks" required>
+                            <input type="number" placeholder="Student's Higher Secondary Marks" min="1" max="500" name="higher-secondary-mark" required>
                         </div>
                         <!-- Student's Highest Secondary Percentage -->
                         <div class="input-box">
                             <span class="details">Student's Highest Secondary Percentage</span>
-                            <input type="number" placeholder="Student's Highest Secondary Percentage" min="1" max="100"
-                                name="higher-secondary-percentage" required>
+                            <input type="number" placeholder="Student's Highest Secondary Percentage" min="1" max="100" name="higher-secondary-percentage" required>
                         </div>
                         <!-- Student's Highest Secondary Passout Year -->
                         <div class="input-box">
                             <span class="details">Student's HS Passout Year</span>
-                            <input type="text" placeholder="Student's Highest Secondary Passout Year"
-                                name="passout-year" pattern="[0-9]{4}" required>
+                            <input type="text" placeholder="Student's Highest Secondary Passout Year" name="passout-year" pattern="[0-9]{4}" required>
                         </div>
                         <!-- student's Highest Secondary Board-->
                         <div class="input-box">
                             <span class="details">Student's HS Passout Board</span>
-                            <input type="text" placeholder="Student's HS Passout Board (e.g-cbsc)" name="board"
-                                required>
+                            <input type="text" placeholder="Student's HS Passout Board (e.g-cbsc)" name="board" required>
                         </div>
                         <!-- student's state -->
                         <div class="input-box">
@@ -254,8 +262,7 @@ if (isset($_POST['submit'])) {
                         <!-- student's pincode -->
                         <div class="input-box">
                             <span class="details">Student's Pincode</span>
-                            <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6"
-                                placeholder="Student's Pincode (e.g: 733101)" required>
+                            <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6" placeholder="Student's Pincode (e.g: 733101)" required>
                         </div>
                         <!-- student's city -->
                         <div class="input-box">
@@ -263,21 +270,18 @@ if (isset($_POST['submit'])) {
                             <input type="text" name="city" placeholder="Student's City (e.g: Balurghat)" required>
                         </div>
                     </div>
-                    <!-- submit
-                    <div class="input-box">
-                        <div class="btn-container">
-                            <button class="button" name="submit" type="submit">SUBMIT</button>
-                        </div>
-                    </div> -->
+
                 </form>
             </div>
         </main>
         <!-- End of  main -->
         <div class="right">
             <div class="top">
+                <!-- menu-dtn -->
                 <button id="menu-dtn">
                     <span class="material-icons-sharp"> menu </span>
                 </button>
+                <!-- profile -->
                 <div class="profile">
                     <div class="info">
                         <p>
@@ -291,12 +295,10 @@ if (isset($_POST['submit'])) {
                         <small class="text-muted"> Admin</small>
                     </div>
                 </div>
-                <!-- submit -->
-                <div class="input-box">
-                    <div class="btn-container">
-                        <button class="button" name="submit" type="submit">SUBMIT</button>
-                    </div>
-                </div>
+            </div>
+            <!-- submit -->
+            <div class="btn-container">
+                <button class="button" name="submit" type="submit" form="student-form">SUBMIT</button>
             </div>
         </div>
     </div>
