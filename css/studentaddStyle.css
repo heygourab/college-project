@@ -293,6 +293,42 @@ form .student-details .input-box {
   padding-top: 1rem;
   padding-right: 10px;
 }
+/* end of profile */
+.right .notes{
+  margin-top: 0.5rem;
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+.right .notes:hover {
+  box-shadow: none;
+}
+
+.right .notes h2 {
+  margin-bottom: 0.5rem;
+  color: white;
+  transition: all 300ms ease;
+}
+
+.right .notes h2:hover {
+  font-size: 22px;
+}
+.right .notes .note b{
+  color:var(--color-active);
+  
+}
+
+.right .notes .note .message {
+  color: white;
+  padding: 1.3px;
+  margin-bottom: 0.1rem;
+}
+
+/* End of Notes */
+
 
 .right .btn-container {
   padding-left: 5rem;
@@ -323,7 +359,7 @@ form .student-details .input-box {
   /* position: relative; */
   padding: 10px;
   position: absolute;
-  bottom: 5rem;
+  bottom: 10rem;
 }
 
 .right .btn-container button::before {

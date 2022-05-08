@@ -29,14 +29,10 @@ if (isset($_POST['submit'])) {
     $selectphone = mysqli_query($conn, "SELECT * FROM students WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM students WHERE email = '" . $_POST['email'] . "'"); //email
 
-    $smp = $sm / 700 * 100 ; 
+    $smp = $sm / 700 * 100;
     $hsp = $hsp / 500 * 100;
-    
-    if ($rightsmp == $smp){
-        echo "<script>alert('Secondary Percentage wrong? Please Insert: $rightsmp ');</script>";
-    }
 
-    if (mysqli_num_rows($selectphone) and mysqli_num_rows($selectemail)) {
+    if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
         $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,dob,course,secondary_mark,	secondary_percentage,higher_secondary_mark,higher_secondary_percentage,passout_year,passout_board,state,pin,city,token)
                 VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$city','$token')";
         $result = mysqli_query($conn, $sql);
@@ -51,8 +47,6 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('This Contact Number already exists,Please try another Contact Number!!!');</script>";
     } else if (mysqli_num_rows($selectemail)) {
         echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
-    } else {
-        echo "<script>alert('Done!!! 😊 $right_smp');</script>";
     }
 }
 ?>
@@ -137,12 +131,12 @@ if (isset($_POST['submit'])) {
                         <!-- student first name -->
                         <div class="input-box">
                             <span class="details">Student's First Name</span>
-                            <input type="text" placeholder="Student First Name" name="fname" required>
+                            <input type="text" placeholder="Student's First Name" name="fname" required>
                         </div>
                         <!-- student last name -->
                         <div class="input-box">
                             <span class="details">Student's Last Name</span>
-                            <input type="text" placeholder="Student Last Name" name="lname" required>
+                            <input type="text" placeholder="Student's Last Name" name="lname" required>
                         </div>
                         <!-- student father name -->
                         <div class="input-box">
@@ -193,20 +187,22 @@ if (isset($_POST['submit'])) {
                             <input type="number" placeholder="Student's Secondary Marks" min="1" max="700" name="secondary-mark" required>
                         </div>
                         <!-- Student Secondary Percentage -->
-                        <div class="input-box">
+                        <!-- <div class="input-box">
                             <span class="details">Student's Secondary Percentage</span>
-                            <input type="number" placeholder="Student's Secondary Percentage" min="1" max="100" name="secondary-percentage" required>
+                            <input type="number" placeholder="Student's Secondary Percentage" min="1" max="100"
+                                name="secondary-percentage" required>
                         </div>
-                        <!-- Student's Highest Secondary Marks -->
+                        Student's Highest Secondary Marks -->
                         <div class="input-box">
                             <span class="details">Student's Highest Secondary Marks</span>
                             <input type="number" placeholder="Student's Higher Secondary Marks" min="1" max="500" name="higher-secondary-mark" required>
                         </div>
                         <!-- Student's Highest Secondary Percentage -->
-                        <div class="input-box">
+                        <!-- <div class="input-box">
                             <span class="details">Student's Highest Secondary Percentage</span>
-                            <input type="number" placeholder="Student's Highest Secondary Percentage" min="1" max="100" name="higher-secondary-percentage" required>
-                        </div>
+                            <input type="number" placeholder="Student's Highest Secondary Percentage" min="1" max="100"
+                                name="higher-secondary-percentage" required>
+                        </div> -->
                         <!-- Student's Highest Secondary Passout Year -->
                         <div class="input-box">
                             <span class="details">Student's HS Passout Year</span>
@@ -293,6 +289,36 @@ if (isset($_POST['submit'])) {
                             </b>
                         </p>
                         <small class="text-muted"> Admin</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notes">
+                <h2>Notes</h2>
+                <div class="note">
+                    <div class="message">
+                        <p>
+                            <b>
+                                Student's Percentage,
+                            </b>
+                            Don't worry student's percentage is automatically stored on the server.
+                        </p>
+                    </div>
+                    <div class="message">
+                        <p>
+                            <b>
+                                Form Submission,
+                            </b>
+                            Don't worry Just click the bottom submit button to submit the form.
+                        </p>
+                    </div>
+                    <div class="message">
+                        <p>
+                            <b>
+                                Student's Payment,
+                            </b>
+                            Don't worry just go to the payment page to do payment.
+                        </p>
                     </div>
                 </div>
             </div>

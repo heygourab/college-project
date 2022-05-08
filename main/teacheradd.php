@@ -105,12 +105,12 @@ if (!isset($_SESSION['fullname'])) {
                         <!-- teacher first name -->
                         <div class="input-box">
                             <span class="details">Teacher's First Name</span>
-                            <input type="text" placeholder="Teacher's First Name'" name="fname" required>
+                            <input type="text" placeholder="Teacher's First Name " name="fname" required>
                         </div>
                         <!-- teacher lastname -->
                         <div class="input-box">
                             <span class="details">Teacher's Last Name</span>
-                            <input type="text" placeholder="Teacher's' Last Name" name="lname" required>
+                            <input type="text" placeholder="Teacher's Last Name" name="lname" required>
                         </div>
                         <!-- email address -->
                         <div class="input-box">
@@ -120,8 +120,7 @@ if (!isset($_SESSION['fullname'])) {
                         <!-- phone number -->
                         <div class="input-box">
                             <span class="details">Teacher's Phone Number</span>
-                            <input type="text" placeholder="Teacher's Phone Number" name="phone-number"
-                                pattern="[0-9]{10}" maxlength="10" required>
+                            <input type="text" placeholder="Teacher's Phone Number" name="phone-number" pattern="[0-9]{10}" maxlength="10" required>
                         </div>
                         <!-- date of birth  -->
                         <div class="input-box">
@@ -197,18 +196,74 @@ if (!isset($_SESSION['fullname'])) {
                         <!-- Teacher's Pincode -->
                         <div class="input-box">
                             <span class="details">Teacher's Pincode</span>
-                            <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6"
-                                placeholder="Student's Pincode (e.g: 733101)" required>
+                            <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6" placeholder="Student's Pincode (e.g: 733101)" required>
                         </div>
-                    </div>
-                    <!-- submit-->
-                    <div class="btn-container">
-                        <button class="button" name="submit" type="submit">SUBMIT</button>
+                        <!-- Teacher's City -->
+                        <div class="input-box">
+                            <span class="details">Teacher's City</span>
+                            <input type="text" name="city" pattern="[A-Z]{255}" maxlength="255" placeholder="Student's City (e.g: Balurghat)" required>
+                        </div>
+
                     </div>
                 </form>
             </div>
         </main>
-    </div>
+        <!-- End of main -->
+        <div class="right">
+            <div class="top">
+                <!-- menu-dtn -->
+                <button id="menu-dtn">
+                    <span class="material-icons-sharp"> menu </span>
+                </button>
+                <!-- profile -->
+                <div class="profile">
+                    <div class="info">
+                        <p>
+                            <b>
+                                <h2>
+                                    Hello,
+                                    <?php echo $_SESSION['fullname'] ?>
+                                </h2>
+                            </b>
+                        </p>
+                        <small class="text-muted"> Admin</small>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes</h2>
+                <div class="note">
+                    <!-- <div class="message">
+                        <p>
+                            <b>
+                                Student's Percentage,
+                            </b>
+                            Don't worry student's percentage is automatically stored on the server.
+                        </p>
+                    </div> -->
+                    <div class="message">
+                        <p>
+                            <b>
+                                Form Submission,
+                            </b>
+                            Don't worry Just click the bottom submit button to submit the form.
+                        </p>
+                    </div>
+                    <!-- <div class="message">
+                        <p>
+                            <b>
+                                Student's Payment,
+                            </b>
+                            Don't worry just go to the payment page to do payment.
+                        </p>
+                    </div> -->
+                </div>
+            </div>
+            <!-- submit -->
+            <div class="btn-container">
+                <button class="button" name="submit" type="submit" form="student-form">SUBMIT</button>
+            </div>
+        </div>
 </body>
 
 </html>
