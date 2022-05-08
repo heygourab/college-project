@@ -1,10 +1,21 @@
 <?php
+// include '../config/config.php' ;
 session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: ../index.php");
 }
 
+$server = "localhost";
+$fullname = "";
+$user = "root";
+$pass = "";
+$database = "college_project";
+$conn = mysqli_connect($server, $user, $pass, $database);
 
+$sql = "SELECT count(id) AS total FROM students";
+$result = mysqli_query($conn, $sql);
+$values = mysqli_fetch_assoc($result);
+$total_students = $values['total'];
 
 ?>
 
@@ -87,7 +98,7 @@ if (!isset($_SESSION['fullname'])) {
                     <div class="middle">
                         <div class="left">
                             <h3>Total Students</h3>
-                            <h1>550</h1>
+                            <h1><?php echo $total_students ?></h1>
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>

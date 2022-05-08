@@ -24,17 +24,17 @@ if (isset($_POST['submit'])) {
     $board = $_POST['board']; //board
     $state = $_POST['state']; //state
     $pin = $_POST['pin']; //pincode
-    $city = $_POST['city']; //city
+    $city = $_POST['localty']; //city
     $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
     $selectphone = mysqli_query($conn, "SELECT * FROM students WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM students WHERE email = '" . $_POST['email'] . "'"); //email
 
     $smp = $sm / 700 * 100;
-    $hsp = $hsp / 500 * 100;
+    $hsp = $hs / 500 * 100;
 
     if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
         $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,dob,course,secondary_mark,	secondary_percentage,higher_secondary_mark,higher_secondary_percentage,passout_year,passout_board,state,pin,city,token)
-                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$city','$token')";
+                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$localty','$token')";
         $result = mysqli_query($conn, $sql);
         if (!$result) {
             echo "<script>alert('Woops!,Something went wrong!!!');</script>";
@@ -186,23 +186,11 @@ if (isset($_POST['submit'])) {
                             <span class="details">Student's Secondary Marks</span>
                             <input type="number" placeholder="Student's Secondary Marks" min="1" max="700" name="secondary-mark" required>
                         </div>
-                        <!-- Student Secondary Percentage -->
-                        <!-- <div class="input-box">
-                            <span class="details">Student's Secondary Percentage</span>
-                            <input type="number" placeholder="Student's Secondary Percentage" min="1" max="100"
-                                name="secondary-percentage" required>
-                        </div>
-                        Student's Highest Secondary Marks -->
+                        <!-- Student's Highest Secondary Marks -->
                         <div class="input-box">
                             <span class="details">Student's Highest Secondary Marks</span>
                             <input type="number" placeholder="Student's Higher Secondary Marks" min="1" max="500" name="higher-secondary-mark" required>
                         </div>
-                        <!-- Student's Highest Secondary Percentage -->
-                        <!-- <div class="input-box">
-                            <span class="details">Student's Highest Secondary Percentage</span>
-                            <input type="number" placeholder="Student's Highest Secondary Percentage" min="1" max="100"
-                                name="higher-secondary-percentage" required>
-                        </div> -->
                         <!-- Student's Highest Secondary Passout Year -->
                         <div class="input-box">
                             <span class="details">Student's HS Passout Year</span>
@@ -262,8 +250,8 @@ if (isset($_POST['submit'])) {
                         </div>
                         <!-- student's city -->
                         <div class="input-box">
-                            <span class="details">Student's City</span>
-                            <input type="text" name="city" placeholder="Student's City (e.g: Balurghat)" required>
+                            <span class="details">Student's Localty</span>
+                            <input type="text" name="localty" placeholder="Student's Loclty (e.g: ....Road)" required>
                         </div>
                     </div>
 
