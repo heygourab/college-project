@@ -233,14 +233,14 @@ if (!isset($_SESSION['fullname'])) {
             <div class="notes">
                 <h2>Notes</h2>
                 <div class="note">
-                    <!-- <div class="message">
+                    <div class="message">
                         <p>
                             <b>
-                                Student's Percentage,
+                                Teacher's Joining date,
                             </b>
-                            Don't worry student's percentage is automatically stored on the server.
+                            Don't worry Teacher's joining date is automatically stored on sever.
                         </p>
-                    </div> -->
+                    </div>
                     <div class="message">
                         <p>
                             <b>

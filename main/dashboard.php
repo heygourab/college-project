@@ -11,12 +11,16 @@ $user = "root";
 $pass = "";
 $database = "college_project";
 $conn = mysqli_connect($server, $user, $pass, $database);
-
+// total students
 $sql = "SELECT count(id) AS total FROM students";
 $result = mysqli_query($conn, $sql);
 $values = mysqli_fetch_assoc($result);
 $total_students = $values['total'];
-
+// total teachers
+$sql  = "SELECT count(id) AS total FROM teachers";
+$result = mysqli_query($conn, $sql);
+$values = mysqli_fetch_assoc($result);
+$total_teachers = $values['total'];
 ?>
 
 <!DOCTYPE html>
@@ -110,7 +114,7 @@ $total_students = $values['total'];
                     <div class="middle">
                         <div class="left">
                             <h3>Total Teachers</h3>
-                            <h1>15</h1>
+                            <h1><?php echo $total_teachers ?></h1>
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
