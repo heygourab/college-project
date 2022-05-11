@@ -1,9 +1,45 @@
 <?php
+include '../config/config.php';
 session_start();
+error_reporting(0);
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
+if (isset($_POST['submit'])) {
+    $fname = $_POST['fname']; //first name 
+    $lname = $_POST['lname']; //last name
+    $fullname = $fname . ' ' . $lname; // fullname
+    $email = $_POST['email']; //
+    $phonenumber = $_POST['phonenumber']; //
+    $dob = $_POST['dob']; //date of birth
+    $status = $_POST['status']; //status 
+    $gender = $_POST['gender']; //gender 
+    $department = $_POST['department']; //department
+    $state = $_POST['state']; //state
+    $pin = $_POST['pin']; //pin
+    $locality = $_POST['locality']; //locality
+    $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
 
+    $selectphone = mysqli_query($conn, "SELECT * FROM teachers WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
+    $selectemail = mysqli_query($conn, "SELECT * FROM teachers WHERE email = '" . $_POST['email'] . "'"); //email
+
+    if (!mysqli_num_rows($selectemail) and !mysqli_num_rows($selectphonel)) {
+        $sql = "INSERT INTO teachers(fullname,email,phonenumber,dob,status,gender,department,state,pincode,locality,token)
+        VALUES ('$fullname','$email','$phonenumber','$dob','$status', '$gender','$department','$state','$pin','$locality','$token')";
+        $result = mysqli_query($conn, $sql);
+        if (!$result) {
+            echo "<script>alert('Woops!,Something went wrong');</script>";
+        } else {
+            echo "<script>alert('Done!')</script>";
+        }
+    } else  if (mysqli_num_rows($selectphone) and mysqli_num_rows($selectemail)) {
+        echo "<script>alert('This Username and Email already exists,Please try another Username!!!');</script>";
+    } else if (mysqli_num_rows($selectphone)) {
+        echo "<script>alert('This Contact Number already exists,Please try another Contact Number!!!');</script>";
+    } else if (mysqli_num_rows($selectemail)) {
+        echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +136,7 @@ if (!isset($_SESSION['fullname'])) {
         <main>
             <h1>Add Teacher Details</h1>
             <div class="s-form">
-                <form action="" method="POST" class="form">
+                <form action="" method="POST" class="form" id="teachers-form">
                     <div class="student-details">
                         <!-- teacher first name -->
                         <div class="input-box">
@@ -120,7 +156,7 @@ if (!isset($_SESSION['fullname'])) {
                         <!-- phone number -->
                         <div class="input-box">
                             <span class="details">Teacher's Phone Number</span>
-                            <input type="text" placeholder="Teacher's Phone Number" name="phone-number" pattern="[0-9]{10}" maxlength="10" required>
+                            <input type="text" placeholder="Teacher's Phone Number" name="phonenumber" pattern="[0-9]{10}" maxlength="10" required>
                         </div>
                         <!-- date of birth  -->
                         <div class="input-box">
@@ -198,10 +234,10 @@ if (!isset($_SESSION['fullname'])) {
                             <span class="details">Teacher's Pincode</span>
                             <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6" placeholder="Student's Pincode (e.g: 733101)" required>
                         </div>
-                        <!-- Teacher's City -->
+                        <!-- Teacher's  -->
                         <div class="input-box">
-                            <span class="details">Teacher's City</span>
-                            <input type="text" name="city" pattern="[A-Z]{255}" maxlength="255" placeholder="Student's City (e.g: Balurghat)" required>
+                            <span class="details">Teacher's Locality</span>
+                            <input type="text" name="locality"  maxlength="255" placeholder="Student's Locality (e.g: ..Road)" required>
                         </div>
 
                     </div>
@@ -261,7 +297,7 @@ if (!isset($_SESSION['fullname'])) {
             </div>
             <!-- submit -->
             <div class="btn-container">
-                <button class="button" name="submit" type="submit" form="student-form">SUBMIT</button>
+                <button class="button" name="submit" type="submit" form="teachers-form">SUBMIT</button>
             </div>
         </div>
 </body>
