@@ -1,9 +1,14 @@
 <?php
+include '../config/config.php';
 session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
 
+$sql = "SELECT count(id) AS total FROM students";
+$result = mysqli_query($conn, $sql);
+$values = mysqli_fetch_assoc($result);
+$total_students = $values['total'];
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +102,50 @@ if (!isset($_SESSION['fullname'])) {
             </div>
         </aside>
         <!-- End of Aside -->
+        <!-- End of Aside -->
+        <main>
+            <h1>New Student</h1>
+            <div class="insights">
+                <!-- students count -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> school </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Students</h3>
+                            <h1><?php echo $total_students ?></h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- BCA Student Count -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> person </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total BCA(H) Students</h3>
+                            <h1></h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- end of Teachers-count -->
+                <!-- Total Income -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> local_library </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total BHM(H) Students</h3>
+                            <h1>5</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- End of Income -->
+            </div>
+            <!-- end of insights -->
+        </main>
     </div>
+    <!-- sidebar -->
 </body>
 
 </html>

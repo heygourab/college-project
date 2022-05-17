@@ -187,7 +187,7 @@ if (isset($_POST['submit'])) {
                         </div>
                         <!-- Student's Highest Secondary Marks -->
                         <div class="input-box">
-                            <span class="details">Student's Highest Secondary Marks</span>
+                            <span class="details">Student's Highe Secondary Marks</span>
                             <input type="number" placeholder="Student's Higher Secondary Marks" min="1" max="500" name="higher-secondary-mark" required>
                         </div>
                         <!-- Student's Highest Secondary Passout Year -->
