@@ -10,10 +10,10 @@ if (isset($_POST['submit'])) {
     $rpassword = md5($_POST['rpassword']);
     $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
     if ($password == $rpassword) {
-        $selectuser = mysqli_query($conn, "SELECT * FROM users WHERE username = '" . $_POST['username'] . "'");
-        $selectemail = mysqli_query($conn, "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'");
+        $selectuser = mysqli_query($conn, "SELECT * FROM admin WHERE username = '" . $_POST['username'] . "'");
+        $selectemail = mysqli_query($conn, "SELECT * FROM admin WHERE email = '" . $_POST['email'] . "'");
         if (!mysqli_num_rows($selectuser) and !mysqli_num_rows($selectemail)) {
-            $sql = "INSERT INTO users(fullname, username, email, password,token)
+            $sql = "INSERT INTO admin(fullname, username, email, password,token)
                     VALUES ('$fullname', '$username', '$email', '$password', '$token')";
             $result = mysqli_query($conn, $sql);
             if (!$result) {

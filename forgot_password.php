@@ -5,7 +5,7 @@ include 'config/config.php';
 
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
-    $selectemail = mysqli_query($conn, "SELECT * FROM users WHERE email = '" . $_POST['email'] . "'");
+    $selectemail = mysqli_query($conn, "SELECT * FROM admin WHERE email = '" . $_POST['email'] . "'");
     if (mysqli_num_rows($selectemail)) {
         $userdata = mysqli_fetch_array($selectemail);
         $token = $userdata['token'];

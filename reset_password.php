@@ -6,7 +6,7 @@ include 'config/config.php';
 if (isset($_POST['submit'])) {
     $password = md5($_POST['password']);
     $rpassword = md5($_POST['rpassword']);
-    $selectpassword = mysqli_query($conn, "SELECT * FROM users WHERE password = '" . $_POST['password'] . "'");
+    $selectpassword = mysqli_query($conn, "SELECT * FROM admin WHERE password = '" . $_POST['password'] . "'");
 
     if (mysqli_num_rows($selectpassword)) {
         echo "<script>alert('this password is not exists')</script>";
