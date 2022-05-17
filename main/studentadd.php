@@ -4,6 +4,7 @@ session_start();
 error_reporting(0);
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
+    
 }
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname']; //first name 
@@ -14,17 +15,15 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email']; //email
     $phonenumber = $_POST['phonenumber']; //phonenumber
     $gender = $_POST['gender']; //gender 
-    $dob = $_POST['dob'];
+    $dob = $_POST['dob']; //date of birth
     $course = $_POST['course']; //course 
     $sm =  $_POST['secondary-mark']; //secondary-mark
-    // $smp = $_POST['secondary-percentage']; //secondary-percentage
     $hs = $_POST['higher-secondary-mark']; //higher-secondary-mark
-    // $hsp = $_POST['higher-secondary-percentage']; //higher-secondary-percentage
     $year = $_POST['passout-year']; //passout-year
     $board = $_POST['board']; //board
     $state = $_POST['state']; //state
     $pin = $_POST['pin']; //pincode
-    $city = $_POST['localty']; //city
+    $locality = $_POST['locality']; //locality
     $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
     $selectphone = mysqli_query($conn, "SELECT * FROM students WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM students WHERE email = '" . $_POST['email'] . "'"); //email
@@ -33,8 +32,8 @@ if (isset($_POST['submit'])) {
     $hsp = $hs / 500 * 100;
 
     if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
-        $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,dob,course,secondary_mark,	secondary_percentage,higher_secondary_mark,higher_secondary_percentage,passout_year,passout_board,state,pin,city,token)
-                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$localty','$token')";
+        $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,dob,course,secondary_mark,	secondary_percentage,higher_secondary_mark,higher_secondary_percentage,passout_year,passout_board,state,pin,locality,token)
+                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$locality','$token')";
         $result = mysqli_query($conn, $sql);
         if (!$result) {
             echo "<script>alert('Woops!,Something went wrong!!!');</script>";
@@ -248,13 +247,12 @@ if (isset($_POST['submit'])) {
                             <span class="details">Student's Pincode</span>
                             <input type="text" name="pin" pattern="[0-9]{6}" maxlength="6" placeholder="Student's Pincode (e.g: 733101)" required>
                         </div>
-                        <!-- student's city -->
+                        <!-- student's locality-->
                         <div class="input-box">
                             <span class="details">Student's Localty</span>
-                            <input type="text" name="localty" placeholder="Student's Loclty (e.g: ....Road)" required>
+                            <input type="text" name="locality" placeholder="Student's Loclty (e.g: ....Road)" required>
                         </div>
                     </div>
-
                 </form>
             </div>
         </main>
