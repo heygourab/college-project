@@ -4,7 +4,7 @@ session_start();
 error_reporting(0);
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
-    
+
 }
 if (isset($_POST['submit'])) {
     $fname = $_POST['fname']; //first name 

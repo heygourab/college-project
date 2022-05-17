@@ -1,17 +1,10 @@
 <?php
-// include '../config/config.php' ;
+include '../config/config.php' ;
 session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: ../index.php");
 }
 
-$server = "localhost";
-$fullname = "";
-$user = "root";
-$pass = "";
-$database = "college_project";
-$conn = mysqli_connect($server, $user, $pass, $database);
-// total students
 $sql = "SELECT count(id) AS total FROM students";
 $result = mysqli_query($conn, $sql);
 $values = mysqli_fetch_assoc($result);
