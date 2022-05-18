@@ -40,11 +40,7 @@ if (isset($_SESSION['submit'])) {
     } else if (mysqli_num_rows($selectemail)) {
         echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
     }
-} else {
-    echo "<script>alert('Woops!,Database Problem!!!');</script>";
 }
-
-
 ?>
 
 <!DOCTYPE html>
