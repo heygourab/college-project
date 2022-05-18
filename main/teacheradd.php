@@ -12,7 +12,15 @@ if (isset($_SESSION['submit'])) {
     $fname = $_POST['fname']; //first name 
     $lname = $_POST['lname']; //last name
     $fullname = $fname . ' ' . $lname; // fullname
-
+    $email = $_POST['email']; //email
+    $phonenumber = $_POST['phonenumber']; //phonumber
+    $gender = $_POST['gender']; //gender
+    $dob = $_POST['dob']; //date of birth
+    $status = $_POST['status']; //status
+    $department = $_POST['department']; //department
+    $state = $_POST['state']; //state
+    $pincode = $_POST['pincode']; //pincode
+    $locality = $_POST['locality']; //locality
     $selectphone = mysqli_query($conn, "SELECT * FROM teachers WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM teachers WHERE email = '" . $_POST['email'] . "'"); //email
 
@@ -32,6 +40,8 @@ if (isset($_SESSION['submit'])) {
     } else if (mysqli_num_rows($selectemail)) {
         echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
     }
+} else {
+    echo "<script>alert('Woops!,Database Problem!!!');</script>";
 }
 
 
