@@ -2,14 +2,36 @@
 include '../config/config.php';
 session_start();
 error_reporting(0);
+
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
 
-if (!isset($_SESSION['submit'])) {
+
+if (isset($_SESSION['submit'])) {
     $fname = $_POST['fname']; //first name 
     $lname = $_POST['lname']; //last name
     $fullname = $fname . ' ' . $lname; // fullname
+
+    $selectphone = mysqli_query($conn, "SELECT * FROM teachers WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
+    $selectemail = mysqli_query($conn, "SELECT * FROM teachers WHERE email = '" . $_POST['email'] . "'"); //email
+
+    if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
+        $sql = "INSERT INTO teachers(fullname)
+                VALUES ('$fullname')";
+        $result = mysqli_query($conn, $sql);
+        if (!$result) {
+            echo "<script>alert('Woops!,Something went wrong!!!');</script>";
+        } else {
+            echo "<script>alert('done!!!');</script>";
+        }
+    } else  if (mysqli_num_rows($selectphone) and mysqli_num_rows($selectemail)) {
+        echo "<script>alert('This Username and Email already exists,Please try another Username!!!');</script>";
+    } else if (mysqli_num_rows($selectphone)) {
+        echo "<script>alert('This Contact Number already exists,Please try another Contact Number!!!');</script>";
+    } else if (mysqli_num_rows($selectemail)) {
+        echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
+    }
 }
 
 
