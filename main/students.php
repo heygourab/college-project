@@ -102,11 +102,10 @@ $total_students = $values['total'];
             </div>
         </aside>
         <!-- End of Aside -->
-        <!-- End of Aside -->
         <main>
             <h1>New Student</h1>
             <div class="insights">
-                <!-- students count -->
+                <!-- total students count -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> school </span>
                     <div class="middle">
@@ -119,28 +118,37 @@ $total_students = $values['total'];
                 </div>
                 <!-- BCA Student Count -->
                 <div class="students-count">
-                    <span class="material-icons-sharp"> person </span>
+                    <span class="material-icons-sharp"> school </span>
                     <div class="middle">
                         <div class="left">
-                            <h3>Total BCA(H) Students</h3>
-                            <h1></h1>
+                            <h3>Total BCA Students</h3>
+                            <h1><?php echo $total_students ?></h1>
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
-                <!-- end of Teachers-count -->
-                <!-- Total Income -->
+                <!-- BBA Student Count -->
                 <div class="students-count">
-                    <span class="material-icons-sharp"> local_library </span>
+                    <span class="material-icons-sharp"> school </span>
                     <div class="middle">
                         <div class="left">
-                            <h3>Total BHM(H) Students</h3>
-                            <h1>5</h1>
+                            <h3>Total BBA Students</h3>
+                            <h1><?php echo $total_students ?></h1>
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
-                <!-- End of Income -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> school </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total BHM Students</h3>
+                            <h1><?php echo $total_students ?></h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+
             </div>
             <!-- end of insights -->
         </main>

@@ -35,11 +35,11 @@ if (isset($_POST['submit'])) {
             <!--email form -->
             <p class="SingIn_text" style="text-align: 2rem; font-weight: 800;">Welcome Back!</p>
             <div class="input_group">
-                <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+                <input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" autocomplete = "off" required>
                 <!--email input placeholder-->
             </div>
             <div class="input_group">
-                <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required> <!-- password input placeholder-->
+                <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" autocomplete="off" required> <!-- password input placeholder-->
             </div>
             <div class="input_group">
                 <button class="button" name="submit">LOG IN</button>
