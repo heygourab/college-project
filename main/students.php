@@ -4,11 +4,29 @@ session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
-
-$sql = "SELECT count(id) AS total FROM students";
-$result = mysqli_query($conn, $sql);
+// total student count
+$total = "SELECT count(id) AS total FROM students";
+$result = mysqli_query($conn, $total);
 $values = mysqli_fetch_assoc($result);
 $total_students = $values['total'];
+
+// male student count
+$male = "SELECT count(*) AS Male FROM students where gender='Male'"; 
+$result = mysqli_query($conn, $male);
+$values = mysqli_fetch_assoc($result);
+$total_male_students = $values['Male'];
+
+// female student count
+$female = "SELECT count(*) AS Female FROM students where gender='Female'";
+$result = mysqli_query($conn, $female);
+$values = mysqli_fetch_assoc($result);
+$total_female_students = $values['Female'];
+
+// other gender students count
+$other_gender = "SELECT count(*) AS Other FROM students where gender='Other'";
+$result = mysqli_query($conn, $other_gender);
+$values = mysqli_fetch_assoc($result);
+$total_other_gender_students = $values['Other'];
 ?>
 
 <!DOCTYPE html>
@@ -103,7 +121,7 @@ $total_students = $values['total'];
         </aside>
         <!-- End of Aside -->
         <main>
-            <h1>New Student</h1>
+            <h1>Students Information</h1>
             <div class="insights">
                 <!-- total students count -->
                 <div class="students-count">
@@ -116,34 +134,35 @@ $total_students = $values['total'];
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
-                <!-- BCA Student Count -->
+                <!-- Male Student Count -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> school </span>
                     <div class="middle">
                         <div class="left">
-                            <h3>Total BCA Students</h3>
-                            <h1><?php echo $total_students ?></h1>
+                            <h3>Male Students</h3>
+                            <h1><?php echo $total_male_students ?></h1>
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
-                <!-- BBA Student Count -->
+                <!-- female Student Count -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> school </span>
                     <div class="middle">
                         <div class="left">
-                            <h3>Total BBA Students</h3>
-                            <h1><?php echo $total_students ?></h1>
+                            <h3>Female Students</h3>
+                            <h1><?php echo $total_female_students ?></h1>
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
+                <!-- other gender student -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> school </span>
                     <div class="middle">
                         <div class="left">
-                            <h3>Total BHM Students</h3>
-                            <h1><?php echo $total_students ?></h1>
+                            <h3>Other gender students</h3>
+                            <h1><?php echo $total_other_gender_students ?></h1>
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
@@ -151,6 +170,7 @@ $total_students = $values['total'];
 
             </div>
             <!-- end of insights -->
+
         </main>
         <!-- end of main -->
         <div class="right">
@@ -194,17 +214,19 @@ $total_students = $values['total'];
                         </p>
                     </div>
                     <div class="message">
-                        <p>
-                            <b>
-                                Teacher's Joining date,
-                            </b>
-                            Don't worry submit time become teacher joining date.
+                        <p><b>
+                                Student Searching?
+                            </b> Use Student's Contact Number or Email for searching.
                         </p>
                     </div>
                 </div>
             </div>
+            <!-- submit -->
+            <div class="btn-container">
+                <button class="button" name="submit" type="submit" form="student-form">SUBMIT</button>
+            </div>
         </div>
-        <!-- end of right -->
+    </div>
 </body>
 
 </html>
