@@ -152,8 +152,59 @@ $total_students = $values['total'];
             </div>
             <!-- end of insights -->
         </main>
-    </div>
-    <!-- sidebar -->
+        <!-- end of main -->
+        <div class="right">
+            <div class="top">
+                <!-- menu-dtn -->
+                <button id="menu-dtn">
+                    <span class="material-icons-sharp"> menu </span>
+                </button>
+                <!-- profile -->
+                <div class="profile">
+                    <div class="info">
+                        <p>
+                            <b>
+                                <h2>
+                                    Hello,
+                                    <?php echo $_SESSION['fullname'] ?>
+                                </h2>
+                            </b>
+                        </p>
+                        <small class="text-muted"> Admin</small>
+                    </div>
+                </div>
+            </div>
+            <div class="notes">
+                <h2>Notes</h2>
+                <div class="note">
+                    <div class="message">
+                        <p>
+                            <b>
+                                Student Count
+                            </b>
+                            Don't worry student's count all time updated.
+                        </p>
+                    </div>
+                    <div class="message">
+                        <p>
+                            <b>
+                                Total Student's Count
+                            </b>
+                            Total student count means that all students of all departments.
+                        </p>
+                    </div>
+                    <div class="message">
+                        <p>
+                            <b>
+                                Teacher's Joining date,
+                            </b>
+                            Don't worry submit time become teacher joining date.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of right -->
 </body>
 
 </html>

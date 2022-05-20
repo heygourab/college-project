@@ -21,12 +21,15 @@ if (isset($_SESSION['submit'])) {
     $state = $_POST['state']; //state
     $pincode = $_POST['pincode']; //pincode
     $locality = $_POST['locality']; //locality
+
+    $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
+
     $selectphone = mysqli_query($conn, "SELECT * FROM teachers WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM teachers WHERE email = '" . $_POST['email'] . "'"); //email
 
     if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
-        $sql = "INSERT INTO teachers(fullname)
-                VALUES ('$fullname')";
+        $sql = "INSERT INTO teachers(fullname,email,phonenumber,gender,dob,status,department,state,pincode,locality,token)
+                VALUES ('$fullname','$email','$phonenumber','$gender','$dob','$status','$department','$state','$pincode','$locality','$token')";
         $result = mysqli_query($conn, $sql);
         if (!$result) {
             echo "<script>alert('Woops!,Something went wrong!!!');</script>";
@@ -285,14 +288,14 @@ if (isset($_SESSION['submit'])) {
                             Don't worry Just click the bottom submit button to submit the form.
                         </p>
                     </div>
-                    <!-- <div class="message">
+                    <div class="message">
                         <p>
                             <b>
-                                Student's Payment,
+                                Teacher's Joining date,
                             </b>
-                            Don't worry just go to the payment page to do payment.
+                            Don't worry submit time become teacher joining date.
                         </p>
-                    </div> -->
+                    </div>
                 </div>
             </div>
             <!-- submit -->

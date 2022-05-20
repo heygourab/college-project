@@ -280,7 +280,7 @@ $total_teachers = $values['total'];
                     </tbody>
                 </table>
                 <!-- student php or pa -->
-                <a href="payment.php">Show All</a>
+                <a href="students.php">Show All</a>
             </div>
             <!-- end of recent-payments -->
         </main>
