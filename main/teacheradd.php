@@ -26,7 +26,7 @@ if (isset($_SESSION['submit'])) {
     $selectphone = mysqli_query($conn, "SELECT * FROM teachers WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM teachers WHERE email = '" . $_POST['email'] . "'"); //email
     if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
-        $sql = "INSERT INTO teachers(fullname,email,phonenumber,gender,dob,status,department,state,pincode,locality,token)
+        $sql = "INSERT INTO teachers (fullname, email, phonenumber, gender, dob, status, department, state, pincode, locality, token) 
                 VALUES ('$fullname','$email','$phonenumber','$gender','$dob','$status','$department','$state','$pincode','$locality','$token')";
         $result = mysqli_query($conn, $sql);
         if (!$result) {
