@@ -14,6 +14,17 @@ $sql  = "SELECT count(id) AS total FROM teachers";
 $result = mysqli_query($conn, $sql);
 $values = mysqli_fetch_assoc($result);
 $total_teachers = $values['total'];
+
+
+// recent_student_name 
+
+
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +100,6 @@ $total_teachers = $values['total'];
         <main>
             <h1>Dashboard</h1>
             <div class="insights">
-                <!-- students count -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> school </span>
                     <div class="middle">
@@ -101,7 +111,6 @@ $total_teachers = $values['total'];
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
                 <!-- End of Students count -->
-                <!-- Teachers Count -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> person </span>
                     <div class="middle">
@@ -113,7 +122,6 @@ $total_teachers = $values['total'];
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
                 <!-- end of Teachers-count -->
-                <!-- Total Income -->
                 <div class="total-courses">
                     <span class="material-icons-sharp"> local_library </span>
                     <div class="middle">
@@ -124,9 +132,7 @@ $total_teachers = $values['total'];
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
-                <!-- End of Income -->
-
-                <!-- Total Income -->
+                <!-- end of total-courses -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> account_balance </span>
                     <div class="middle">
@@ -149,7 +155,7 @@ $total_teachers = $values['total'];
                             <th>Student Name</th>
                             <th>Courses</th>
                             <th>Semester</th>
-                            <th>Amount</th>
+                            <!-- <th>Amount</th> -->
                         </tr>
                     </thead>
                     <!-- php student database -->
@@ -163,9 +169,9 @@ $total_teachers = $values['total'];
                         <td>
                             <h3>6th</h3>
                         </td>
-                        <td>
+                        <!-- <td>
                             <h3>₹ 21200</h3>
-                        </td>
+                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -181,9 +187,9 @@ $total_teachers = $values['total'];
                         <td>
                             <h3>6th</h3>
                         </td>
-                        <td>
+                        <!-- <td>
                             <h3>₹ 21200</h3>
-                        </td>
+                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -199,9 +205,9 @@ $total_teachers = $values['total'];
                         <td>
                             <h3>6th</h3>
                         </td>
-                        <td>
+                        <!-- <td>
                             <h3>₹ 21200</h3>
-                        </td>
+                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -217,9 +223,9 @@ $total_teachers = $values['total'];
                         <td>
                             <h3>6th</h3>
                         </td>
-                        <td>
+                        <!-- <td>
                             <h3>₹ 21200</h3>
-                        </td>
+                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -235,9 +241,9 @@ $total_teachers = $values['total'];
                         <td>
                             <h3>6th</h3>
                         </td>
-                        <td>
+                        <!-- <td>
                             <h3>₹ 21200</h3>
-                        </td>
+                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -253,9 +259,9 @@ $total_teachers = $values['total'];
                         <td>
                             <h3>6th</h3>
                         </td>
-                        <td>
+                        <!-- <td>
                             <h3>₹ 21200</h3>
-                        </td>
+                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -271,9 +277,9 @@ $total_teachers = $values['total'];
                         <td>
                             <h3>6th</h3>
                         </td>
-                        <td>
+                        <!-- <td>
                             <h3>₹ 21200</h3>
-                        </td>
+                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>

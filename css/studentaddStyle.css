@@ -294,7 +294,7 @@ form .student-details .input-box {
   padding-right: 10px;
 }
 /* end of profile */
-.right .notes{
+.right .notes {
   margin-top: 0.5rem;
   background: rgba(27, 27, 27, 0.651);
   backdrop-filter: saturate(180%) blur(10px);
@@ -316,9 +316,8 @@ form .student-details .input-box {
 .right .notes h2:hover {
   font-size: 22px;
 }
-.right .notes .note b{
-  color:var(--color-active);
-  
+.right .notes .note b {
+  color: var(--color-active);
 }
 
 .right .notes .note .message {
@@ -328,7 +327,6 @@ form .student-details .input-box {
 }
 
 /* End of Notes */
-
 
 .right .btn-container {
   padding-left: 5rem;
