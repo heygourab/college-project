@@ -1,5 +1,5 @@
 <?php
-include '../config/config.php' ;
+include '../config/config.php';
 session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: ../index.php");
@@ -17,8 +17,6 @@ $total_teachers = $values['total'];
 
 
 // recent_student_name 
-
-
 
 
 
@@ -154,8 +152,7 @@ $total_teachers = $values['total'];
                         <tr>
                             <th>Student Name</th>
                             <th>Courses</th>
-                            <th>Semester</th>
-                            <!-- <th>Amount</th> -->
+                            <th>Payment Status</th>
                         </tr>
                     </thead>
                     <!-- php student database -->
@@ -167,11 +164,8 @@ $total_teachers = $values['total'];
                             <h3>BCA(H)</h3>
                         </td>
                         <td>
-                            <h3>6th</h3>
+                            <h3>Done</h3>
                         </td>
-                        <!-- <td>
-                            <h3>₹ 21200</h3>
-                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -185,11 +179,8 @@ $total_teachers = $values['total'];
                             <h3>BCA(H)</h3>
                         </td>
                         <td>
-                            <h3>6th</h3>
+                            <h3>Done</h3>
                         </td>
-                        <!-- <td>
-                            <h3>₹ 21200</h3>
-                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -203,11 +194,8 @@ $total_teachers = $values['total'];
                             <h3>BCA(H)</h3>
                         </td>
                         <td>
-                            <h3>6th</h3>
+                            <h3>Done</h3>
                         </td>
-                        <!-- <td>
-                            <h3>₹ 21200</h3>
-                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -221,11 +209,8 @@ $total_teachers = $values['total'];
                             <h3>BCA(H)</h3>
                         </td>
                         <td>
-                            <h3>6th</h3>
+                            <h3>Done</h3>
                         </td>
-                        <!-- <td>
-                            <h3>₹ 21200</h3>
-                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -239,11 +224,8 @@ $total_teachers = $values['total'];
                             <h3>BCA(H)</h3>
                         </td>
                         <td>
-                            <h3>6th</h3>
+                            <h3>Done</h3>
                         </td>
-                        <!-- <td>
-                            <h3>₹ 21200</h3>
-                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -257,11 +239,8 @@ $total_teachers = $values['total'];
                             <h3>BCA(H)</h3>
                         </td>
                         <td>
-                            <h3>6th</h3>
+                            <h3>Done</h3>
                         </td>
-                        <!-- <td>
-                            <h3>₹ 21200</h3>
-                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>
@@ -275,11 +254,8 @@ $total_teachers = $values['total'];
                             <h3>BCA(H)</h3>
                         </td>
                         <td>
-                            <h3>6th</h3>
+                            <h3>Done</h3>
                         </td>
-                        <!-- <td>
-                            <h3>₹ 21200</h3>
-                        </td> -->
                         <td class="details">
                             <h3>Details</h3>
                         </td>

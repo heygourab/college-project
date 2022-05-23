@@ -382,6 +382,10 @@ main .recent-payments a:hover {
   margin-bottom: 0.1rem;
 }
 
+.right .recent-update .update b {
+  color: var(--color-active)
+}
+
 /* End of recent update */
 
 .right .recent-student {
