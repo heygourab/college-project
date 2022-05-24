@@ -11,7 +11,7 @@ $values = mysqli_fetch_assoc($result);
 $total_students = $values['total'];
 
 // male student count
-$male = "SELECT count(*) AS Male FROM students where gender='Male'"; 
+$male = "SELECT count(*) AS Male FROM students where gender='Male'";
 $result = mysqli_query($conn, $male);
 $values = mysqli_fetch_assoc($result);
 $total_male_students = $values['Male'];
@@ -190,7 +190,7 @@ $total_other_gender_students = $values['Other'];
                                 </h2>
                             </b>
                         </p>
-                        <small class="text-muted"> Admin</small>
+                        <small class="text-muted">Admin</small>
                     </div>
                 </div>
             </div>
@@ -221,9 +221,13 @@ $total_other_gender_students = $values['Other'];
                     </div>
                 </div>
             </div>
+            <div class="input-box">
+            <span class="details">Use Studnent Email or Phonenumber</span>
+                <input type="text" placeholder="Search for Student" name="search" required>
+            </div>
             <!-- submit -->
             <div class="btn-container">
-                <button class="button" name="submit" type="submit" form="student-form">SUBMIT</button>
+                <button class="button" name="submit" type="submit" form="student-form">Search</button>
             </div>
         </div>
     </div>

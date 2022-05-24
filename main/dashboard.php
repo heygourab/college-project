@@ -17,8 +17,12 @@ $total_teachers = $values['total'];
 
 
 // recent_student_name 
-
-
+$sql = mysqli_query($conn ,"SELECT * FROM students ORDER BY id DESC LIMIT 1");
+$lastrowdata =  mysqli_fetch_row($sql);
+// recentStudent 1 name
+$recentStudent = $lastrowdata[1];
+// recentStudent 1 course
+$recentStudent_course = $lastrowdata[8];
 
 
 
@@ -158,10 +162,10 @@ $total_teachers = $values['total'];
                     <!-- php student database -->
                     <tbody>
                         <td>
-                            <h3>Gourab Sarkar</h3>
+                            <h3><?php echo $recentStudent?></h3>
                         </td>
                         <td>
-                            <h3>BCA(H)</h3>
+                            <h3><?php echo $recentStudent_course?></h3>
                         </td>
                         <td>
                             <h3>Done</h3>
@@ -173,7 +177,7 @@ $total_teachers = $values['total'];
 
                     <tbody>
                         <td>
-                            <h3>Bikram Roy</h3>
+                            <h3>test</h3>
                         </td>
                         <td>
                             <h3>BCA(H)</h3>
@@ -294,7 +298,7 @@ $total_teachers = $values['total'];
                     <div class="message">
                         <p>
                             <b>New Student, </b>
-                            Random Student
+                            <?php echo $recentStudent ?>
                         </p>
                         <small class="text-muted"> Last 24 Hours</small>
                     </div>

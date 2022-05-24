@@ -295,6 +295,7 @@ if (isset($_SESSION['submit'])) {
                     </div>
                 </div>
             </div>
+
             <!-- submit -->
             <div class="btn-container">
                 <button class="button" name="submit" type="submit" form="teacher-form">SUBMIT</button>

@@ -12,7 +12,17 @@
   --color-info-dark: #2e2e2e;
   --color-bottom: rgb(160, 160, 160);
   --box-shadow: 0 0.5rem 1.5rem var(--color-info-dark);
+  --rad: .7rem;
+  --dur: .3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: #57bd84;
+  --font-fam: 'Lato', sans-serif;
+  --height: 5rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
+
 
 * {
   margin: 0;
@@ -407,6 +417,46 @@ main .insights small {
   padding: 10px;
   position: absolute;
   bottom: 10rem;
+}
+
+.right .input-box{
+  text-align: center;
+}
+
+.right .input-box .details {
+  
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  padding-left: 5px;
+  /* display block for fix margin */
+  transition: all 300ms ease;
+}
+.right .input-box .details:hover {
+  color: var(--color-active);
+}
+
+.right .input-box input {
+  /* margin-top: 2rem; */
+  height: 45px;
+  width: 100%;
+  border: 2px solid #adadad;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: rgb(220, 220, 220);
+  border-radius: 20px;
+  background: transparent; /* transparent */
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+  transition: all 300ms ease;
+}
+
+.right .input-box input:focus{
+  border-color: #3b9464;
 }
 
 .right .btn-container button::before {
