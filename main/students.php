@@ -156,11 +156,14 @@ switch($total_students) {
         $recentStudent_phone3 = '?';
         $recentStudent_phone4 = '?';
         break;
-
     }
 
 
-$text = 'Use the Search option for Student Search';
+$text = 'Use the SearchBar for Student Search?';
+$studentname = 'Not Found 😖';
+$studentphonenumber = '😖';
+$studentemail = '😖';
+$studentcourse = '😖';
 //student serach
 if(isset($_POST['submit'])){
     $phonenumber = $_POST['search'];
@@ -168,9 +171,15 @@ if(isset($_POST['submit'])){
     $sql = "SELECT * FROM students WHERE email='$email' OR phonenumber='$phonenumber'";
     $result = mysqli_query($conn, $sql);
     if($result->num_rows > 0){
-        $text = 'Student Found!';
+        $data = mysqli_fetch_row($result) ;
+        $text = 'Student Found 😊';
+        $studentname = $data[1]; 
+        $studentemail = $data[4];
+        $studentphonenumber = $data[5];
+        $studentcourse = $data[8];
+        
     } else {
-        $text = 'Student Not Found';
+        $text = 'Student Not Found 😖';
     }
 }
 
@@ -316,25 +325,15 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
             <!-- end of insights -->
-            <div class="student-search-info">
-                <h2>
-                    <?php echo $text ?>
-                </h2>
-            </div>
-            <div class="found-student">
-
-            </div>
-
-
             <div class="recent-students">
                 <h2>Recent Students</h2>
-                <table>
+                <table> 
                     <thead>
                         <tr>
                             <th>Student Name</th>
                             <th>Phone Number</th>
                             <th>Email</th>
-                            <th>Courses</th>
+                            <th>Course</th>
                         </tr>
                     </thead>
                     <!-- php student database -->
@@ -353,52 +352,81 @@ if(isset($_POST['submit'])){
                             <h3><?php echo $recentStudent_course1 ?></h3>
                         </td>
                     </tbody>
-
                     <tbody>
-                    <td>
-                        <h3><?php echo $recentStudent2 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_phone2 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_email2 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_course2 ?></h3>
-                    </td>
+                        <td>
+                            <h3><?php echo $recentStudent2 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_phone2 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_email2 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_course2 ?></h3>
+                        </td>
                     </tbody>
-
                     <tbody>
-                    <td>
-                        <h3><?php echo $recentStudent3 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_phone3 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_email3 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_course3 ?></h3>
-                    </td>
+                        <td>
+                            <h3><?php echo $recentStudent3 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_phone3 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_email3 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_course3 ?></h3>
+                        </td>
                     </tbody>
-
                     <tbody>
-                    <td>
-                        <h3><?php echo $recentStudent4 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_phone4 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_email4 ?></h3>
-                    </td>
-                    <td>
-                        <h3><?php echo $recentStudent_course4 ?></h3>
-                    </td>
+                        <td>
+                            <h3><?php echo $recentStudent4 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_phone4 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_email4 ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $recentStudent_course4 ?></h3>
+                        </td>
                     </tbody>
+                </table>
             <!-- end of recent-students -->
+            <div class="student-search">
+                <h2><?php echo $text ?></h2>
+                <table> 
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>
+                            <h3><?php echo $studentname ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $studentphonenumber ?></h3>
+                        </td>
+                        <td>
+                            <h3><?php echo $studentemail ?></h3>
+                        </td>
+
+                        <td>
+                            <h3><?php echo $studentcourse ?></h3>
+                        </td>
+                        <td>
+                            <a href="">Details</a>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <!-- end of main -->
         <div class="right">

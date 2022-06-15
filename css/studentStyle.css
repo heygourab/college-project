@@ -268,16 +268,36 @@ main .insights small {
 }
 
 
-main .found-student {
+main .student-search {
   margin-top: 1rem;
 }
 
-main .found-student h2 {
+main .student-search h2 {
   color: white;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+main .found-student table {
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+main .student-search {
+  margin-top: 1rem;
+}
+
+main .student-search h2{
+  color :white;
   margin-bottom: 0.8rem;
 }
 
-main .found-student {
+main .student-search table {
   background: rgba(27, 27, 27, 0.651);
   backdrop-filter: saturate(180%) blur(10px);
   padding: 20px;
@@ -289,8 +309,9 @@ main .found-student {
 
 
 
-/* recent students */
 
+
+/* recent students */
 main .recent-students {
   margin-top: 1rem;
 }
@@ -310,6 +331,15 @@ main .recent-students table {
   color: white;
   /* box-shadow: var(--box-shadow); */
 }
+main .recent-students table th {
+  font-size: 20px;
+}
+
+main table tbody td {
+  height: 2.8rem;
+  border-bottom: 2px solid var(--color-active);
+  color: white;
+}
 
 main .recent-students table th {
   font-size: 20px;
@@ -325,22 +355,8 @@ main table tbody:last-child td {
   border: none;
 }
 
-main table tbody td h3 {
-  transition: all 300ms ease;
-}
-
-main table tbody td h3:hover {
-  font-size: 15px;
-}
-
-main table tbody td.details h3 {
-  transition: all 300ms ease;
-}
-
-main table tbody td.details h3:hover {
-  font-size: 15px;
+main table tbody td a:hover {
   color: var(--color-active);
-  font-weight: bold;
 }
 
 
@@ -506,7 +522,7 @@ main table tbody td.details h3:hover {
   font-weight: 500;
   color: white;
   margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   display: block;
   padding-left: 5px;
   /* display block for fix margin */
