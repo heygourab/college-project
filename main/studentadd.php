@@ -25,6 +25,7 @@ if (isset($_POST['submit'])) {
     $state = $_POST['state']; //state
     $pin = $_POST['pin']; //pincode
     $locality = $_POST['locality']; //locality
+    $payment_status = 'Panding';
     $token = bin2hex(random_bytes(15)); // for security //bin2hex converts to hex
     $selectphone = mysqli_query($conn, "SELECT * FROM students WHERE phonenumber = '" . $_POST['phonenumber'] . "'"); //phonenumber
     $selectemail = mysqli_query($conn, "SELECT * FROM students WHERE email = '" . $_POST['email'] . "'"); //email
@@ -33,8 +34,8 @@ if (isset($_POST['submit'])) {
     $hsp = $hs / 500 * 100;
 
     if (!mysqli_num_rows($selectphone) and !mysqli_num_rows($selectemail)) {
-        $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,dob,course,secondary_mark,	secondary_percentage,higher_secondary_mark,higher_secondary_percentage,passout_year,passout_board,state,pin,locality,token)
-                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$locality','$token')";
+        $sql = "INSERT INTO students(fullname,fathername,mothername,email,phonenumber,gender,dob,course,secondary_mark,	secondary_percentage,higher_secondary_mark,higher_secondary_percentage,passout_year,passout_board,state,pin,locality,payment_status,token)
+                VALUES ('$fullname','$fathername','$mothername','$email','$phonenumber','$gender','$dob','$course','$sm','$smp', '$hs','$hsp','$year', '$board','$state','$pin','$locality','$payment_status','$token')";
         $result = mysqli_query($conn, $sql);
         if (!$result) {
             echo "<script>alert('Woops!,Something went wrong!!!');</script>";
