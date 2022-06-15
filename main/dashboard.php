@@ -15,18 +15,42 @@ $result = mysqli_query($conn, $sql);
 $values = mysqli_fetch_assoc($result);
 $total_teachers = $values['total'];
 
+$recentStudent1 = null;
+$recentStudent2 = null;
+$recentStudent3 = null;
+$recentStudent4 = null;
 
-// recent_student_name 
-$sql = mysqli_query($conn ,"SELECT * FROM students ORDER BY id DESC LIMIT 1");
-$lastrowdata =  mysqli_fetch_row($sql);
-// recentStudent 1 name
-$recentStudent = $lastrowdata[1];
-// recentStudent 1 course
-$recentStudent_course = $lastrowdata[8];
+if ($total_students == 0) {
+    $recentStudent1 = 'Student Not Found';
+    $recentStudent2 = 'Student Not Found';
+    $recentStudent3 = 'Student Not Found';
+    $recentStudent4 = 'Student Not Found';
 
+    $recentStudent_course1 = '?';
+    $recentStudent_course2 = '?';
+    $recentStudent_course3 = '?';
+    $recentStudent_course4 = '?';
+} else {
+    $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
+    $lastrowdata =  mysqli_fetch_row($sql);
+    $recentStudent1 = $lastrowdata[1]; // recentStudent 1 name
+    $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
 
+    $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -1");
+    $lastrowdata =  mysqli_fetch_row($sql);
+    $recentStudent2 = $lastrowdata[1]; // recentStudent 2 name
+    $recentStudent_course2 = $lastrowdata[8];// recentStudent 2 course
 
+    $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -2");
+    $lastrowdata =  mysqli_fetch_row($sql);
+    $recentStudent3 = $lastrowdata[1]; // recentStudent 3 name
+    $recentStudent_course3 = $lastrowdata[8]; // recentStudent 3 course
 
+    $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -3");
+    $lastrowdata =  mysqli_fetch_row($sql);
+    $recentStudent4 = $lastrowdata[1]; // recentStudent 4 name
+    $recentStudent_course4 = $lastrowdata[8]; // recentStudent 4 course
+}
 ?>
 
 <!DOCTYPE html>
@@ -162,10 +186,10 @@ $recentStudent_course = $lastrowdata[8];
                     <!-- php student database -->
                     <tbody>
                         <td>
-                            <h3><?php echo $recentStudent?></h3>
+                            <!-- <h3><?php echo $recentStudent1 ?></h3> -->
                         </td>
                         <td>
-                            <h3><?php echo $recentStudent_course?></h3>
+                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
                         </td>
                         <td>
                             <h3>Done</h3>
@@ -177,10 +201,10 @@ $recentStudent_course = $lastrowdata[8];
 
                     <tbody>
                         <td>
-                            <h3>test</h3>
+                            <!-- <h3><?php echo $recentStudent2 ?></h3> -->
                         </td>
                         <td>
-                            <h3>BCA(H)</h3>
+                            <!-- <h3><?php echo $recentStudent_course2 ?></h3> -->
                         </td>
                         <td>
                             <h3>Done</h3>
@@ -286,19 +310,17 @@ $recentStudent_course = $lastrowdata[8];
                                 </h2>
                             </b>
                         </p>
-                        <small class="text-muted"> Admin</small>
+                        <small class="text-muted">Admin</small>
                     </div>
                 </div>
             </div>
-            <!-- end of top bar -->
-
             <div class="recent-update">
                 <h2>Recent Updates</h2>
                 <div class="update">
                     <div class="message">
                         <p>
                             <b>New Student, </b>
-                            <?php echo $recentStudent ?>
+                            <?php echo $recentStudent1 ?>
                         </p>
                         <small class="text-muted"> Last 24 Hours</small>
                     </div>
@@ -324,9 +346,8 @@ $recentStudent_course = $lastrowdata[8];
                 <!-- end of recent updates -->
             </div>
             <!-- end of  recent update -->
-
             <div class="recent-student">
-                <h2>Recent Students</h2>
+                <h2>New Students</h2>
                 <div class="students">
                     <!-- student 1 -->
                     <div class="student">
@@ -335,10 +356,10 @@ $recentStudent_course = $lastrowdata[8];
                         </div>
                         <div class="right">
                             <div class="student-name">
-                                <h3>Gourab Sarkar</h3>
+                                <h3><?php echo $recentStudent1 ?></h3>
                             </div>
                             <div class="course-name">
-                                <h3>BCA(h)</h3>
+                                <h3><?php echo $recentStudent_course1 ?></h3>
                             </div>
                         </div>
                     </div>
@@ -349,10 +370,10 @@ $recentStudent_course = $lastrowdata[8];
                         </div>
                         <div class="right">
                             <div class="student-name">
-                                <h3>Gourab Sarkar</h3>
+                                <h3><?php echo $recentStudent2 ?></h3>
                             </div>
                             <div class="course-name">
-                                <h3>BCA(h)</h3>
+                                <h3><?php echo $recentStudent_course2 ?></h3>
                             </div>
                         </div>
                     </div>
@@ -363,10 +384,10 @@ $recentStudent_course = $lastrowdata[8];
                         </div>
                         <div class="right">
                             <div class="student-name">
-                                <h3>Gourab Sarkar</h3>
+                                <h3><?php echo $recentStudent3 ?></h3>
                             </div>
                             <div class="course-name">
-                                <h3>BCA(h)</h3>
+                                <h3><?php echo $recentStudent_course3 ?></h3>
                             </div>
                         </div>
                     </div>
@@ -377,10 +398,10 @@ $recentStudent_course = $lastrowdata[8];
                         </div>
                         <div class="right">
                             <div class="student-name">
-                                <h3>Bikram Roy</h3>
+                                <h3><?php echo $recentStudent4?></h3>
                             </div>
                             <div class="course-name">
-                                <h3>BCA(h)</h3>
+                                <h3><?php echo $recentStudent_course4?></h3>
                             </div>
                         </div>
                     </div>

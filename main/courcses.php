@@ -94,8 +94,58 @@ if (!isset($_SESSION['fullname'])) {
                     <H3>Logout!</H3>
                 </a>
             </div>
-
         </aside>
+
+        <main>
+            <h1>Courcses Information</h1>
+            <div class="insights">
+                <!-- total students count -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> school </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Students</h3>
+                            <h1></h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- Male Student Count -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> school </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Male Students</h3>
+                            <h1></h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- female Student Count -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> school </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Female Students</h3>
+                            <h1></h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- other gender student -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> school </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Other gender students</h3>
+                            <h1></h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+
+            </div>
+            <!-- end of insights -->
         <!-- End of Aside -->
     </div>
 </body>
