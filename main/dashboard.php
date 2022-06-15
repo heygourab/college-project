@@ -20,37 +20,78 @@ $recentStudent2 = null;
 $recentStudent3 = null;
 $recentStudent4 = null;
 
-if ($total_students == 0) {
-    $recentStudent1 = 'Student Not Found';
-    $recentStudent2 = 'Student Not Found';
-    $recentStudent3 = 'Student Not Found';
-    $recentStudent4 = 'Student Not Found';
+$recentStudent_course1 = '?';
+$recentStudent_course2 = '?';
+$recentStudent_course3 = '?';
+$recentStudent_course4 = '?';
 
-    $recentStudent_course1 = '?';
-    $recentStudent_course2 = '?';
-    $recentStudent_course3 = '?';
-    $recentStudent_course4 = '?';
-} else {
-    $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
-    $lastrowdata =  mysqli_fetch_row($sql);
-    $recentStudent1 = $lastrowdata[1]; // recentStudent 1 name
-    $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
+switch($total_students){
+    case $total_students == 1: 
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
 
-    $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -1");
-    $lastrowdata =  mysqli_fetch_row($sql);
-    $recentStudent2 = $lastrowdata[1]; // recentStudent 2 name
-    $recentStudent_course2 = $lastrowdata[8];// recentStudent 2 course
+    case $total_students == 2:
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
+        
+        $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent2 = $lastrowdata[1]; // recentStudent 2 name
+        $recentStudent_course2 = $lastrowdata[8];// recentStudent 2 course
+    
+    case $total_students == 3: 
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
+        
+        $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent2 = $lastrowdata[1]; // recentStudent 2 name
+        $recentStudent_course2 = $lastrowdata[8];// recentStudent 2 course
+        
+        $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -2");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent3 = $lastrowdata[1]; // recentStudent 3 name
+        $recentStudent_course3 = $lastrowdata[8]; // recentStudent 3 course
 
-    $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -2");
-    $lastrowdata =  mysqli_fetch_row($sql);
-    $recentStudent3 = $lastrowdata[1]; // recentStudent 3 name
-    $recentStudent_course3 = $lastrowdata[8]; // recentStudent 3 course
+    case $total_students == 4: 
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
 
-    $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -3");
-    $lastrowdata =  mysqli_fetch_row($sql);
-    $recentStudent4 = $lastrowdata[1]; // recentStudent 4 name
-    $recentStudent_course4 = $lastrowdata[8]; // recentStudent 4 course
+        $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent2 = $lastrowdata[1]; // recentStudent 2 name
+        $recentStudent_course2 = $lastrowdata[8];// recentStudent 2 course
+
+        $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -2");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent3 = $lastrowdata[1]; // recentStudent 3 name
+        $recentStudent_course3 = $lastrowdata[8]; // recentStudent 3 course
+
+        $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -3");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent4 = $lastrowdata[1]; // recentStudent 4 name
+        $recentStudent_course4 = $lastrowdata[8]; // recentStudent 4 course
+    default :
+        $recentStudent1 = 'Student Not Found';
+        $recentStudent2 = 'Student Not Found';
+        $recentStudent3 = 'Student Not Found';
+        $recentStudent4 = 'Student Not Found';
+    
+        $recentStudent_course1 = '?';
+        $recentStudent_course2 = '?';
+        $recentStudent_course3 = '?';
+        $recentStudent_course4 = '?';
 }
+
+
 ?>
 
 <!DOCTYPE html>
