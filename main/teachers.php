@@ -110,23 +110,45 @@ switch($total_teachers) {
         break;
         
     default :
-        $recentStudent_name1 = 'Student Not Found';
-        $recentStudent_name2 = 'Student Not Found';
-        $recentStudent_name3 = 'Student Not Found';
-        $recentStudent_name4 = 'Student Not Found';
         
-        $recentStudent_email1 = '?';
-        $recentStudent_email2 = '?';
-        $recentStudent_email3 = '?';
-        $recentStudent_email4 = '?';
+        $recentTeacher_name1 = 'Teacher Not Found';
+        $recentTeacher_name2 = 'Teacher Not Found';
+        $recentTeacher_name3 = 'Teacher Not Found';
+        $recentTeacher_name4 = 'Teacher Not Found';
 
-        $recentStudent_phone1 = '?';
-        $recentStudent_phone2 = '?';
-        $recentStudent_phone3 = '?';
-        $recentStudent_phone4 = '?';
+        $recentTeacher_email1 = '?';
+        $recentTeacher_email2 = '?';
+        $recentTeacher_email3 = '?';
+        $recentTeacher_email4 = '?';
+
+        $recentTeacher_phone1 = '?';
+        $recentTeacher_phone2 = '?';
+        $recentTeacher_phone3 = '?';
+        $recentTeacher_phone4 = '?';
         break;
     }
 
+$text = 'Use the SearchBar for Search?';
+$teachername = 'Not Found 😖';
+$teacherphonenumber = '😖';
+$teacheremail = '😖';
+//student serach
+if(isset($_POST['submit'])){
+    $phonenumber = $_POST['search'];
+    $email = $_POST['search'];
+    $sql = "SELECT * FROM teachers WHERE email='$email' OR phonenumber='$phonenumber'";
+    $result = mysqli_query($conn, $sql);
+    if($result->num_rows > 0){
+        $data = mysqli_fetch_row($result) ;
+        $text = 'Teacher Found 😊';
+        $teachername = $data[1]; 
+        $teacheremail = $data[4];
+        $teacherphonenumber = $data[5];
+        
+    } else {
+        $text = 'Teacher Not Found 😖';
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -217,11 +239,10 @@ switch($total_teachers) {
                     <H3>Logout!</H3>
                 </a>
             </div>
-
         </aside>
         <!-- End of Aside -->
         <main>
-            <h1>Students Information</h1>
+            <h1>Teachers Information</h1>
             <div class="insights">
                 <!-- total teacher count -->
                 <div class="students-count">
@@ -269,7 +290,7 @@ switch($total_teachers) {
                 </div>
             </div>
             <!-- end of insights -->
-            <div class="recent-Teacher">
+            <div class="recent-teachers">
                 <h2>Recent Teachers</h2>
                 <table> 
                     <thead>
@@ -282,28 +303,24 @@ switch($total_teachers) {
                     <!-- php student database -->
                     <tbody>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo $recentTeacher_name1 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo   $recentTeacher_email1 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
-                        </td>
-
-                        <td>
-                            <h3></h3>
+                            <h3><?php echo  $recentTeacher_phone1 ?></h3>
                         </td>
                     </tbody>
                     <tbody>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo $recentTeacher_name2 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo   $recentTeacher_email2 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo  $recentTeacher_phone2 ?></h3>
                         </td>
                         <td>
                             <h3></h3>
@@ -311,13 +328,13 @@ switch($total_teachers) {
                     </tbody>
                     <tbody>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo $recentTeacher_name3 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo   $recentTeacher_email3 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo  $recentTeacher_phone3 ?></h3>
                         </td>
                         <td>
                             <h3></h3>
@@ -325,44 +342,36 @@ switch($total_teachers) {
                     </tbody>
                     <tbody>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo $recentTeacher_name4 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo   $recentTeacher_email4 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
-                        </td>
-                        <td>
-                            <h3></h3>
+                            <h3><?php echo  $recentTeacher_phone4 ?></h3>
                         </td>
                     </tbody>
                 </table>
             <!-- end of recent-students -->
             <div class="teacher-search">
-                <h2></h2>
+                <h2><?php echo $text ?></h2>
                 <table> 
                     <thead>
                         <tr>
-                            <th>Student Name</th>
+                            <th>Teacher Name</th>
                             <th>Phone Number</th>
                             <th>Email</th>
-                            <th>Course</th>
                         </tr>
                     </thead>
                     <tbody>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo $teachername ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <h3><?php echo $teacherphonenumber ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
-                        </td>
-
-                        <td>
-                            <h3></h3>
+                            <h3><?php echo $teacheremail ?></h3>
                         </td>
                         <td>
                             <a href="">Details</a>

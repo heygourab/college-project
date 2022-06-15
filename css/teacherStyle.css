@@ -273,11 +273,11 @@ main .insights small {
   display: block;
 }
 
-main .student-search {
+main .teacher-search {
   margin-top: 1rem;
 }
 
-main .student-search h2 {
+main .teacher-search h2 {
   color: white;
   margin-bottom: 0.8rem;
   text-align: center;
@@ -312,17 +312,17 @@ main .student-search table {
   color: white;
 }
 
-/* recent students */
-main .recent-students {
+/* recent Teachers */
+main .recent-teachers {
   margin-top: 1rem;
 }
 
-main .recent-students h2 {
+main .recent-teachers h2 {
   color: white;
   margin-bottom: 0.8rem;
 }
 
-main .recent-students table {
+main .recent-teachers table {
   background: rgba(27, 27, 27, 0.651);
   backdrop-filter: saturate(180%) blur(10px);
   padding: 20px;
@@ -332,7 +332,7 @@ main .recent-students table {
   color: white;
   /* box-shadow: var(--box-shadow); */
 }
-main .recent-students table th {
+main .recent-teachers table th {
   font-size: 20px;
 }
 
@@ -342,7 +342,7 @@ main table tbody td {
   color: white;
 }
 
-main .recent-students table th {
+main .recent-teachers table th {
   font-size: 20px;
 }
 
