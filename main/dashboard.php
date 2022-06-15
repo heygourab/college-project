@@ -15,10 +15,10 @@ $result = mysqli_query($conn, $sql);
 $values = mysqli_fetch_assoc($result);
 $total_teachers = $values['total'];
 
-$recentStudent1 = null;
-$recentStudent2 = null;
-$recentStudent3 = null;
-$recentStudent4 = null;
+$recentStudent1 = 'Student Not Found';
+$recentStudent2 = 'Student Not Found';
+$recentStudent3 = 'Student Not Found';
+$recentStudent4 = 'Student Not Found';
 
 $recentStudent_course1 = '?';
 $recentStudent_course2 = '?';
@@ -31,7 +31,7 @@ switch($total_students){
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentStudent1 = $lastrowdata[1]; // recentStudent 1 name
         $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
-
+        break; 
     case $total_students == 2:
         $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
@@ -42,7 +42,7 @@ switch($total_students){
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentStudent2 = $lastrowdata[1]; // recentStudent 2 name
         $recentStudent_course2 = $lastrowdata[8];// recentStudent 2 course
-    
+        break; 
     case $total_students == 3: 
         $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
@@ -53,7 +53,7 @@ switch($total_students){
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentStudent2 = $lastrowdata[1]; // recentStudent 2 name
         $recentStudent_course2 = $lastrowdata[8];// recentStudent 2 course
-        
+        break; 
         $sql = mysqli_query($conn, "SELECT * FROM students WHERE $total_students -2");
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentStudent3 = $lastrowdata[1]; // recentStudent 3 name
@@ -79,6 +79,7 @@ switch($total_students){
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentStudent4 = $lastrowdata[1]; // recentStudent 4 name
         $recentStudent_course4 = $lastrowdata[8]; // recentStudent 4 course
+        break; 
     default :
         $recentStudent1 = 'Student Not Found';
         $recentStudent2 = 'Student Not Found';
@@ -89,6 +90,7 @@ switch($total_students){
         $recentStudent_course2 = '?';
         $recentStudent_course3 = '?';
         $recentStudent_course4 = '?';
+        break;
 }
 
 

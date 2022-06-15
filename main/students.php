@@ -27,6 +27,22 @@ $other_gender = "SELECT count(*) AS Other FROM students where gender='Other'";
 $result = mysqli_query($conn, $other_gender);
 $values = mysqli_fetch_assoc($result);
 $total_other_gender_students = $values['Other'];
+
+//student serach
+
+if(isset($_POST['submit'])){
+    $phonenumber = $_POST['search'];
+    $email = $_POST['search'];
+    $sql = "SELECT * FROM students WHERE email='$email' OR phonenumber='$phonenumber'";
+    $result = mysqli_query($conn, $sql);
+    if($result->num_rows > 0){
+        echo "<script>alert('Woops Strudent found!!!');</script>";
+    } else {
+        echo "<script>alert('Woops Strudent Not found!!!');</script>";
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -221,13 +237,15 @@ $total_other_gender_students = $values['Other'];
                     </div>
                 </div>
             </div>
-            <div class="input-box">
-            <span class="details">Use Studnent Email or Phonenumber</span>
-                <input type="text" placeholder="Search for Student" name="search" required>
-            </div>
+            <div class="s-form">
+                <form action="" method="POST" class="form" id="student-search">
+                    <div class="input-box">
+                    <span class="details">Use Studnent Email or Phonenumber</span>
+                    <input type="text" placeholder="Search for Student" name="search" required>
+                </div>
             <!-- submit -->
             <div class="btn-container">
-                <button class="button" name="submit" type="submit" form="student-form">Search</button>
+                <button class="button" name="submit" type="submit" form="student-search">Search</button>
             </div>
         </div>
     </div>
