@@ -28,20 +28,10 @@ $result = mysqli_query($conn, $other_gender);
 $values = mysqli_fetch_assoc($result);
 $total_other_gender_students = $values['Other'];
 
-
-
-
-// student info
-
-$sql = "SELECT count(id) AS total FROM students";
-$result = mysqli_query($conn, $sql);
-$values = mysqli_fetch_assoc($result);
-$total_students = $values['total'];
-
-$recentStudent1 = 'Student Not Found';
-$recentStudent2 = 'Student Not Found';
-$recentStudent3 = 'Student Not Found';
-$recentStudent4 = 'Student Not Found';
+$recentStudent_name1 = 'Student Not Found';
+$recentStudent_name2 = 'Student Not Found';
+$recentStudent_name3 = 'Student Not Found';
+$recentStudent_name4 = 'Student Not Found';
 
 $recentStudent_course1 = '?';
 $recentStudent_course2 = '?';
@@ -339,7 +329,7 @@ if(isset($_POST['submit'])){
                     <!-- php student database -->
                     <tbody>
                         <td>
-                            <h3><?php echo $recentStudent1 ?></h3>
+                            <h3><?php echo $recentStudent_name1 ?></h3>
                         </td>
                         <td>
                             <h3><?php echo $recentStudent_phone1 ?></h3>
@@ -354,7 +344,7 @@ if(isset($_POST['submit'])){
                     </tbody>
                     <tbody>
                         <td>
-                            <h3><?php echo $recentStudent2 ?></h3>
+                            <h3><?php echo $recentStudent_name2 ?></h3>
                         </td>
                         <td>
                             <h3><?php echo $recentStudent_phone2 ?></h3>
@@ -368,7 +358,7 @@ if(isset($_POST['submit'])){
                     </tbody>
                     <tbody>
                         <td>
-                            <h3><?php echo $recentStudent3 ?></h3>
+                            <h3><?php echo $recentStudent_name3 ?></h3>
                         </td>
                         <td>
                             <h3><?php echo $recentStudent_phone3 ?></h3>
@@ -382,7 +372,7 @@ if(isset($_POST['submit'])){
                     </tbody>
                     <tbody>
                         <td>
-                            <h3><?php echo $recentStudent4 ?></h3>
+                            <h3><?php echo $recentStudent_name4 ?></h3>
                         </td>
                         <td>
                             <h3><?php echo $recentStudent_phone4 ?></h3>
@@ -456,7 +446,7 @@ if(isset($_POST['submit'])){
                     <div class="message">
                         <p>
                             <b>
-                                Student Count
+                                Student's Count
                             </b>
                             Don't worry student's count all time updated.
                         </p>
@@ -480,8 +470,8 @@ if(isset($_POST['submit'])){
             <div class="s-form">
                 <form action="" method="POST" class="form" id="student-search">
                     <div class="input-box">
-                    <span class="details">Use Studnent Email or Phonenumber</span>
-                    <input type="text" placeholder="Search for Student" name="search" required>
+                    <span class="details">Use Studnent's Email or Phonenumber</span>
+                    <input type="text" placeholder="Search for Student's Info." name="search" required>
                 </div>
             <!-- submit -->
             <div class="btn-container">
