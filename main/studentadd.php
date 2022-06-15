@@ -48,6 +48,8 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('This Contact Number already exists,Please try another Contact Number!!!');</script>";
     } else if (mysqli_num_rows($selectemail)) {
         echo "<script>alert('This Email already exists,Please try another Email!!!');</script>";
+    } else{
+        echo "<script>alert('Someting Went Wrong!!!');</script>";
     }
 }
 ?>
@@ -61,8 +63,6 @@ if (isset($_POST['submit'])) {
     <title>Add Students</title>
     <!--icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- css -->
     <link rel="stylesheet" href="../css/studentaddStyle.css" />
 </head>
@@ -127,7 +127,7 @@ if (isset($_POST['submit'])) {
         <main>
             <h1>Add Student Details</h1>
             <div class="s-form">
-                <form action="" method="POST" class="form" id="student-form">
+                <form action="" method="POST" class="form" id="teacher-form">
                     <div class="student-details">
                         <!-- student first name -->
                         <div class="input-box">
@@ -312,7 +312,7 @@ if (isset($_POST['submit'])) {
             </div>
             <!-- submit -->
             <div class="btn-container">
-                <button class="button" name="submit" type="submit" form="student-form">SUBMIT</button>
+                <button class="button" name="submit" type="submit" form="teacher-form">SUBMIT</button>
             </div>
         </div>
     </div>
