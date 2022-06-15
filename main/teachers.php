@@ -27,10 +27,105 @@ $result = mysqli_query($conn, $other_gender);
 $values = mysqli_fetch_assoc($result);
 $total_other_gender_teachers = $values['Other'];
 
+$recentTeacher_name1 = 'Teacher Not Found';
+$recentTeacher_name2 = 'Teacher Not Found';
+$recentTeacher_name3 = 'Teacher Not Found';
+$recentTeacher_name4 = 'Teacher Not Found';
 
+$recentTeacher_email1 = '?';
+$recentTeacher_email2 = '?';
+$recentTeacher_email3 = '?';
+$recentTeacher_email4 = '?';
 
+$recentTeacher_phone1 = '?';
+$recentTeacher_phone2 = '?';
+$recentTeacher_phone3 = '?';
+$recentTeacher_phone4 = '?';
 
+switch($total_teachers) {
+    case $total_teachers == 1: 
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        // $recentTeacher_name1 = $lastrowdata[1]; // recentStudent 1 name
+        // $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
+        // $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
+        break; 
+    case $total_students == 2:
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
+        $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
 
+        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name2 = $lastrowdata[1]; // recentStudent 2 name
+        $recentTeacher_email2 =  $lastrowdata[2]; //recentStudent 2 email
+        $recentTeacher_phone2 = $lastrowdata[3]; // recentStudent 2 phoneNumber
+        break; 
+    case $total_students == 3: 
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
+        $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
+
+        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeachTeacher_name2 = $lastrowdata[1]; // recentStudent 2 name
+        $recentTeacher_email2 =  $lastrowdata[2]; //recentStudent 2 email
+        $recentTeacher_phone2 = $lastrowdata[3]; // recentStudent 2 phoneNumber
+
+        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -2");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name3 = $lastrowdata[1]; // recentStudent 2 name
+        $recentTeacher_email3 =  $lastrowdata[2]; //recentStudent 2 email
+        $recentTeacher_phone3 = $lastrowdata[3]; // recentStudent 2 phoneNumber
+        
+        break;
+    case $total_students == 4: 
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name1 = $lastrowdata[1]; // recentTeacher 1 name
+        $recentTeacher_email1 =  $lastrowdata[2]; //recentTeacher 1 email
+        $recentTeacher_phone1 = $lastrowdata[3]; // recentTeacher 1 phoneNumber
+
+        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name2 = $lastrowdata[1]; // recentTeac 2 name
+        $recentTeacher_email2 =  $lastrowdata[2]; //recentStudent 2 email
+        $recentTeacher_phone2 = $lastrowdata[3]; // recentStudent 2 phoneNumber
+
+        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -2");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name3 = $lastrowdata[1]; // recentStudent 2 name
+        $recentTeacher_email3 =  $lastrowdata[2]; //recentStudent 2 email
+        $recentTeacher_phone3 = $lastrowdata[3]; // recentStudent 2 phoneNumber
+
+        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -3");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentTeacher_name4 = $lastrowdata[1]; // recentStudent 2 name
+        $recentTeacher_email4 =  $lastrowdata[2]; //recentStudent 2 email
+        $recentTeacher_phone4 = $lastrowdata[3]; // recentStudent 2 phoneNumber
+        break;
+        
+    default :
+        $recentStudent_name1 = 'Student Not Found';
+        $recentStudent_name2 = 'Student Not Found';
+        $recentStudent_name3 = 'Student Not Found';
+        $recentStudent_name4 = 'Student Not Found';
+        
+        $recentStudent_email1 = '?';
+        $recentStudent_email2 = '?';
+        $recentStudent_email3 = '?';
+        $recentStudent_email4 = '?';
+
+        $recentStudent_phone1 = '?';
+        $recentStudent_phone2 = '?';
+        $recentStudent_phone3 = '?';
+        $recentStudent_phone4 = '?';
+        break;
+    }
 
 ?>
 <!DOCTYPE html>
@@ -182,7 +277,6 @@ $total_other_gender_teachers = $values['Other'];
                             <th>Teacher Name</th>
                             <th>Phone Number</th>
                             <th>Email</th>
-                            <th>Course</th>
                         </tr>
                     </thead>
                     <!-- php student database -->
