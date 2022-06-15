@@ -267,6 +267,83 @@ main .insights small {
   display: block;
 }
 
+
+main .found-student {
+  margin-top: 1rem;
+}
+
+main .found-student h2 {
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+main .found-student {
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+
+
+/* recent students */
+
+main .recent-students {
+  margin-top: 1rem;
+}
+
+main .recent-students h2 {
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+main .recent-students table {
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  /* box-shadow: var(--box-shadow); */
+}
+
+main .recent-students table th {
+  font-size: 20px;
+}
+
+main table tbody td {
+  height: 2.8rem;
+  border-bottom: 2px solid var(--color-active);
+  color: white;
+}
+
+main table tbody:last-child td {
+  border: none;
+}
+
+main table tbody td h3 {
+  transition: all 300ms ease;
+}
+
+main table tbody td h3:hover {
+  font-size: 15px;
+}
+
+main table tbody td.details h3 {
+  transition: all 300ms ease;
+}
+
+main table tbody td.details h3:hover {
+  font-size: 15px;
+  color: var(--color-active);
+  font-weight: bold;
+}
+
+
 /*  note  */
 .right {
   height: 0.5vh;
