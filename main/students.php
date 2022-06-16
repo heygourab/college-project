@@ -57,28 +57,77 @@ switch($total_students) {
         $recentStudent_email1 =  $lastrowdata[4]; //recentStudent 1 email
         $recentStudent_phone1 = $lastrowdata[5]; // recentStudent 1 phoneNumber
         break; 
+
     case $total_students == 2:
-        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1,1");
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentStudent_name1 = $lastrowdata[1]; // recentStudent 1 name
         $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
         $recentStudent_email1 =  $lastrowdata[4]; //recentStudent 1 email
         $recentStudent_phone1 = $lastrowdata[5];
 
-        $temp = $total_students; 
-        $temp = $temp - 1;
-        $sql = "SELECT * FROM students WHERE id='$temp'";
+        
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1,1");
         $result = mysqli_query($conn, $sql);
         $recentStudent_name2 = $lastrowdata[1]; // recentStudent 1 name
         $recentStudent_course2 = $lastrowdata[8]; // recentStudent 1 course
         $recentStudent_email2 =  $lastrowdata[4]; //recentStudent 1 email
         $recentStudent_phone2 = $lastrowdata[5];
         break; 
+
     case $total_students == 3: 
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent_name1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
+        $recentStudent_email1 =  $lastrowdata[4]; //recentStudent 1 email
+        $recentStudent_phone1 = $lastrowdata[5]; // recentStudent 1 phoneNumber
+
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1,1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent_name2 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course2 = $lastrowdata[8]; // recentStudent 1 course
+        $recentStudent_email2 =  $lastrowdata[4]; //recentStudent 1 email
+        $recentStudent_phone22 = $lastrowdata[5];
+    
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 2,1");
+        $result = mysqli_query($conn, $sql);
+        $recentStudent_name3 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course3 = $lastrowdata[8]; // recentStudent 1 course
+        $recentStudent_email3 =  $lastrowdata[4]; //recentStudent 1 email
+        $recentStudent_phone3 = $lastrowdata[5];
         break;
+
     case $total_students == 4: 
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent_name1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course1 = $lastrowdata[8]; // recentStudent 1 course
+        $recentStudent_email1 =  $lastrowdata[4]; //recentStudent 1 email
+        $recentStudent_phone1 = $lastrowdata[5]; // recentStudent 1 phoneNumber
+
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1,1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent_name2 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course2 = $lastrowdata[8]; // recentStudent 1 course
+        $recentStudent_email2 =  $lastrowdata[4]; //recentStudent 1 email
+        $recentStudent_phone2 = $lastrowdata[5];
+    
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 2,1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent_name3 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course3 = $lastrowdata[8]; // recentStudent 1 course
+        $recentStudent_email3 =  $lastrowdata[4]; //recentStudent 1 email
+        $recentStudent_phone3 = $lastrowdata[5];
+
+        $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 3,1");
+        $lastrowdata =  mysqli_fetch_row($sql);
+        $recentStudent_name4 = $lastrowdata[1]; // recentStudent 1 name
+        $recentStudent_course4 = $lastrowdata[8]; // recentStudent 1 course
+        $recentStudent_email4 =  $lastrowdata[4]; //recentStudent 1 email
+        $recentStudent_phone4 = $lastrowdata[5];
         break;
-        
+
     default :
         $recentStudent_name1 = 'Student Not Found';
         $recentStudent_name2 = 'Student Not Found';

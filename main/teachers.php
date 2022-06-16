@@ -46,9 +46,9 @@ switch($total_teachers) {
     case $total_teachers == 1: 
         $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
-        $recentTeacher_name1 = $lastrowdata[1]; // recentStudent 1 name
-        $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
-        $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
+        // $recentTeacher_name1 = $lastrowdata[1]; // recentStudent 1 name
+        // $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
+        // $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
         break; 
 
     case $total_students == 2:
