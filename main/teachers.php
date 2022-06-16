@@ -46,10 +46,11 @@ switch($total_teachers) {
     case $total_teachers == 1: 
         $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
-        // $recentTeacher_name1 = $lastrowdata[1]; // recentStudent 1 name
-        // $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
-        // $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
+        $recentTeacher_name1 = $lastrowdata[1]; // recentStudent 1 name
+        $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
+        $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
         break; 
+
     case $total_students == 2:
         $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
@@ -57,12 +58,13 @@ switch($total_teachers) {
         $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
         $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
 
-        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -1");
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1,1");
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentTeacher_name2 = $lastrowdata[1]; // recentStudent 2 name
         $recentTeacher_email2 =  $lastrowdata[2]; //recentStudent 2 email
         $recentTeacher_phone2 = $lastrowdata[3]; // recentStudent 2 phoneNumber
         break; 
+
     case $total_students == 3: 
         $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
@@ -70,19 +72,19 @@ switch($total_teachers) {
         $recentTeacher_email1 =  $lastrowdata[2]; //recentStudent 1 email
         $recentTeacher_phone1 = $lastrowdata[3]; // recentStudent 1 phoneNumber
 
-        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -1");
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1,1");
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentTeachTeacher_name2 = $lastrowdata[1]; // recentStudent 2 name
         $recentTeacher_email2 =  $lastrowdata[2]; //recentStudent 2 email
         $recentTeacher_phone2 = $lastrowdata[3]; // recentStudent 2 phoneNumber
 
-        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -2");
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 2,1");
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentTeacher_name3 = $lastrowdata[1]; // recentStudent 2 name
         $recentTeacher_email3 =  $lastrowdata[2]; //recentStudent 2 email
         $recentTeacher_phone3 = $lastrowdata[3]; // recentStudent 2 phoneNumber
-        
         break;
+
     case $total_students == 4: 
         $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1");
         $lastrowdata =  mysqli_fetch_row($sql);
@@ -90,19 +92,20 @@ switch($total_teachers) {
         $recentTeacher_email1 =  $lastrowdata[2]; //recentTeacher 1 email
         $recentTeacher_phone1 = $lastrowdata[3]; // recentTeacher 1 phoneNumber
 
-        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -1");
-        $lastrowdata =  mysqli_fetch_row($sql);
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 1,1");
+        $result = mysqli_query($conn, $sql);
+        $lastrowdata =  mysqli_fetch_row($result);
         $recentTeacher_name2 = $lastrowdata[1]; // recentTeac 2 name
         $recentTeacher_email2 =  $lastrowdata[2]; //recentStudent 2 email
         $recentTeacher_phone2 = $lastrowdata[3]; // recentStudent 2 phoneNumber
 
-        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -2");
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 2,1");
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentTeacher_name3 = $lastrowdata[1]; // recentStudent 2 name
         $recentTeacher_email3 =  $lastrowdata[2]; //recentStudent 2 email
         $recentTeacher_phone3 = $lastrowdata[3]; // recentStudent 2 phoneNumber
 
-        $sql = mysqli_query($conn, "SELECT * FROM teachers WHERE $total_teachers -3");
+        $sql = mysqli_query($conn, "SELECT * FROM teachers ORDER BY id DESC LIMIT 3,1");
         $lastrowdata =  mysqli_fetch_row($sql);
         $recentTeacher_name4 = $lastrowdata[1]; // recentStudent 2 name
         $recentTeacher_email4 =  $lastrowdata[2]; //recentStudent 2 email
@@ -311,6 +314,9 @@ if(isset($_POST['submit'])){
                         <td>
                             <h3><?php echo  $recentTeacher_phone1 ?></h3>
                         </td>
+                        <td>
+                            <a href="">Details</a>
+                        </td>
                     </tbody>
                     <tbody>
                         <td>
@@ -323,7 +329,7 @@ if(isset($_POST['submit'])){
                             <h3><?php echo  $recentTeacher_phone2 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <a href="">Details</a>
                         </td>
                     </tbody>
                     <tbody>
@@ -337,7 +343,7 @@ if(isset($_POST['submit'])){
                             <h3><?php echo  $recentTeacher_phone3 ?></h3>
                         </td>
                         <td>
-                            <h3></h3>
+                            <a href="">Details</a>
                         </td>
                     </tbody>
                     <tbody>
@@ -349,6 +355,9 @@ if(isset($_POST['submit'])){
                         </td>
                         <td>
                             <h3><?php echo  $recentTeacher_phone4 ?></h3>
+                        </td>
+                        <td>
+                            <a href="">Details</a>
                         </td>
                     </tbody>
                 </table>
