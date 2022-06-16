@@ -135,6 +135,8 @@ $text = 'Use the SearchBar for Search?';
 $teachername = 'Not Found 😖';
 $teacherphonenumber = '😖';
 $teacheremail = '😖';
+$token = ''; 
+$details ='';
 //student serach
 if(isset($_POST['submit'])){
     $phonenumber = $_POST['search'];
@@ -147,7 +149,8 @@ if(isset($_POST['submit'])){
         $teachername = $data[1]; 
         $teacheremail = $data[4];
         $teacherphonenumber = $data[5];
-        
+        $token = $data[14]; 
+        $details = 'studentdetalis.php?token=' . $token;
     } else {
         $text = 'Teacher Not Found 😖';
     }

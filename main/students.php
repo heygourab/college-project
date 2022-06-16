@@ -157,6 +157,8 @@ $studentname = '😌';
 $studentphonenumber = '😊';
 $studentemail = '😎';
 $studentcourse = '🙂';
+$token = ''; 
+$details ='';
 //student serach
 if(isset($_POST['submit'])){
     $phonenumber = $_POST['search'];
@@ -170,7 +172,8 @@ if(isset($_POST['submit'])){
         $studentemail = $data[4];
         $studentphonenumber = $data[5];
         $studentcourse = $data[8];
-        
+        $token = $data[18];
+        $details = 'studentdetalis.php?token=' . $token;
     } else {
         $text = 'Student Not Found 😖';
         $studentname = '😖';
@@ -178,6 +181,7 @@ if(isset($_POST['submit'])){
         $studentemail = '😖';
         $studentcourse = '😖';
     }
+
 }
 
 ?>
@@ -419,7 +423,7 @@ if(isset($_POST['submit'])){
                             <h3><?php echo $studentcourse ?></h3>
                         </td>
                         <td>
-                            <a href="">Details</a>
+                            <a href='<?php echo $details?>'>Details</a>
                         </td>
                     </tbody>
                 </table>
