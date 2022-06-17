@@ -132,12 +132,12 @@ switch($total_teachers) {
     }
 
 $text = 'Use the SearchBar for Search?';
-$teachername = 'Not Found 😖';
-$teacherphonenumber = '😖';
-$teacheremail = '😖';
+$teachername = '🤔';
+$teacherphonenumber = '🙂';
+$teacheremail = '😪';
 $token = ''; 
 $details ='';
-//student serach
+//teacher serach
 if(isset($_POST['submit'])){
     $phonenumber = $_POST['search'];
     $email = $_POST['search'];
@@ -150,9 +150,12 @@ if(isset($_POST['submit'])){
         $teacheremail = $data[4];
         $teacherphonenumber = $data[5];
         $token = $data[14]; 
-        $details = 'studentdetalis.php?token=' . $token;
+        $details = 'teacherdetalis.php?token=' . $token;
     } else {
         $text = 'Teacher Not Found 😖';
+        $teachername = '😖';
+        $teacherphonenumber = '😖';
+        $teacheremail = '😖';
     }
 }
 ?>
@@ -332,7 +335,7 @@ if(isset($_POST['submit'])){
                             <h3><?php echo  $recentTeacher_phone2 ?></h3>
                         </td>
                         <td>
-                            <a href="">Details</a>
+                        <a href='<?php echo $details?>'>Details</a>
                         </td>
                     </tbody>
                     <tbody>

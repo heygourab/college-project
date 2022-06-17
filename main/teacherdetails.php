@@ -7,27 +7,23 @@ if (!isset($_SESSION['fullname'])) {
 
 $token  = $_GET['token']; // token 
 
-$sql = mysqli_query($conn, "SELECT * FROM students WHERE token = '$token'");
+$sql = mysqli_query($conn, "SELECT * FROM teachers WHERE token = '$token'");
 $data = mysqli_fetch_array($sql);
 
 $fullname = $data[1]; //fullname
-$fathername = $data[2]; //fathername
-$mothername = $data[3]; //mothername
-$email = $data[4]; //email
-$phonenumber = $data[5]; //phonumber
-$gender = $data[6]; //gender
-$dob = $data[7]; //date of birth
-$course = $data[8]; //course
-$sec = $data[9]; //sec
-$sec_percentage = $data[10]; //sec percentage
-$hsc = $data[11]; //
-$hsc_percentage = $data[12]; //
-$passout_year = $data[13]; //passout year
-$passout_board = $data[14]; //passout board
-$state = $data[15]; //state
-$pin = $data[16]; //pincode
-$locality = $data[17]; //locality
+$email = $data[2]; //email
+$phonenumber = $data[3]; //phonumber
+$gender = $data[4]; //gender
+$dob = $data[5]; //date of birth
+$status = $data[6]; //status
+$department = $data[7]; //department
+$state = $data[8]; //state
+$pin = $data[9]; //pincode
+$locality = $data[10]; //locality
+$joining = $data[12];
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,18 +117,17 @@ $locality = $data[17]; //locality
         </aside>
         <!-- End of Aside -->
         <main>
-            <h1>Student's Information</h1>
+            <h1>Teacher's Information</h1>
             <div class="student-info">
                 <h2>
-                    Student's General Information
+                    Teacher's General Information
                 </h2>
                 <table> 
                     <thead>
                         <tr>
-                            <th>Student Name</th>
+                            <th>Teacher Name</th>
                             <th>Phone Number</th>
                             <th>Email</th>
-                            <th>Course</th>
                             <th>Gender</th>
                         </tr>
                     </thead>
@@ -147,68 +142,47 @@ $locality = $data[17]; //locality
                             <h3><?php echo $email?></h3>
                         </td>
                         <td>
-                            <h3><?php echo $course?></h3>
-                        </td>
-                        <td>
                             <h3><?php echo $gender?></h3>
                         </td>
                     </tbody>
                 </table>
-                <h2>Student's marks</h2>
+                <h2>Teacher's Material Status & and Date of Birth</h2>
                 <table> 
                     <thead>
                         <tr>
-                            <th>Higher Secondary</th>
-                            <th>Secondary</th>
-                            <th>HSC Passout Year</th>
-                            <th>HSC Passout Board</th>
+                            <th>Material Status</th>
+                            <th>Date of Birth</th>
                         </tr>
                     </thead>
                     <tbody>
                         <td>
-                            <h3><?php echo $hsc .' ( ' .$hsc_percentage.' % )' ?></h3>
+                            <h3><?php echo $status?></h3>
                         </td>
                         <td>
-                            <h3><?php echo $sec .' ( ' .$sec_percentage.' % )' ?></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $passout_year?></h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $passout_board?></h3>
+                            <h3><?php echo $dob?></h3>
                         </td>
                     </tbody>
                 </table>
-                <h2>Student's Date of Birth & Parents Info.</h2>
+                <h2>Teacher's Department & Joining Date .</h2>
                 <table> 
                     <thead>
                         <tr>
-                            <th>Father Name</th>
-                            <th>Student Date of Birth</th> 
-                            <th>Mother Name</th>
+                            <th>Department</th>
+                            <th>Joining Date</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <td>
-                            <h3><?php echo $mothername?></h3>
-                        </td>
-                        <td>
-                            <h3>
-                                <?php echo $dob ?>
-                            </h3>
-                        </td>
-                        <td>
-                            <h3><?php echo $fathername?></h3>
-                        </td>
+                        <td><?php echo $department?></td>
+                        <td><?php echo $joining?></td>
                     </tbody>
                 </table>
-                    <h2>Student's Address</h2>
+                    <h2>Teacher's Address</h2>
                 <table> 
                     <thead>
                         <tr>
-                            <th>Student's State</th>
-                            <th>Student's Pin</th>
-                            <th>Student's Locality</th>
+                            <th>Teacher's State</th>
+                            <th>Teacher's Pin</th>
+                            <th>Teacher's Locality</th>
                         </tr>
                     </thead>
                     <tbody>
