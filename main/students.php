@@ -68,7 +68,7 @@ switch($total_students) {
 
         
         $sql = mysqli_query($conn, "SELECT * FROM students ORDER BY id DESC LIMIT 1,1");
-        $result = mysqli_query($conn, $sql);
+        $lastrowdata = mysqli_fetch_row($sql);
         $recentStudent_name2 = $lastrowdata[1]; // recentStudent 1 name
         $recentStudent_course2 = $lastrowdata[8]; // recentStudent 1 course
         $recentStudent_email2 =  $lastrowdata[4]; //recentStudent 1 email
@@ -244,11 +244,11 @@ if(isset($_POST['submit'])){
                     <H3>Add Teacher</H3>
                 </a>
                 <!-- courses -->
-                <a href="./courcses.php"><span class="material-icons-sharp">
+                <!-- <a href="./courcses.php"><span class="material-icons-sharp">
                         local_library
                     </span>
                     <H3>Courses</H3>
-                </a>
+                </a> -->
                 <!-- payments -->
                 <a href="./payments.php">
                     <span class="material-icons-sharp">

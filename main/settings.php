@@ -64,11 +64,11 @@ if (!isset($_SESSION['fullname'])) {
                     <H3>Add Teacher</H3>
                 </a>
                 <!-- courses -->
-                <a href="./courcses.php"><span class="material-icons-sharp">
+                <!-- <a href="./courcses.php"><span class="material-icons-sharp">
                         local_library
                     </span>
                     <H3>Courses</H3>
-                </a>
+                </a> -->
                 <!-- payments -->
                 <a href="./payments.php">
                     <span class="material-icons-sharp">

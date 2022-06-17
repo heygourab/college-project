@@ -143,9 +143,9 @@ switch($total_students){
                     <H3>Add Teacher</H3>
                 </a>
                 <!-- courses -->
-                <a href="./courcses.php"><span class="material-icons-sharp"> local_library </span>
+                <!-- <a href="./courcses.php"><span class="material-icons-sharp"> local_library </span>
                     <H3>Courses</H3>
-                </a>
+                </a> -->
                 <!-- payments -->
                 <a href="./payments.php">
                     <span class="material-icons-sharp"> payments </span>
@@ -191,7 +191,7 @@ switch($total_students){
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
                 <!-- end of Teachers-count -->
-                <div class="total-courses">
+                <!-- <div class="total-courses">
                     <span class="material-icons-sharp"> local_library </span>
                     <div class="middle">
                         <div class="left">
@@ -200,7 +200,7 @@ switch($total_students){
                         </div>
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
-                </div>
+                </div> -->
                 <!-- end of total-courses -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> account_balance </span>
