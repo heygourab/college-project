@@ -114,9 +114,9 @@ if (isset($_POST['submit'])) {
                     <H3>Settings</H3>
                 </a>
                 <!-- about -->
-                <a href="./about.php"><span class="material-icons-sharp"> info </span>
+                <!-- <a href="./about.php"><span class="material-icons-sharp"> info </span>
                     <H3>About</H3>
-                </a>
+                </a> -->
                 <!-- logout -->
                 <a href="./logout.php"><span class="material-icons-sharp"> logout </span>
                     <H3>Logout!</H3>
