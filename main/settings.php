@@ -4,18 +4,22 @@ if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
 
-$fullname = $_SESSION['fullname'];
+
+
+$name = $_SESSION['fullname'];
 
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
-    
+    $fname = $_POST['fname']; //first name 
+    $lname = $_POST['lname']; //last name
+    $fullname = $fname . ' ' . $lname; // fullname
     if ($password == $cpassword) {
         $selectpassword = mysqli_query($conn, "SELECT * FROM admin WHERE password = '" . $_POST['password'] . "'");
         if(!mysqli_num_rows($selectpassword)){
-            $updatequery = "update users set password='$password' where fullname = '$fullname'";
-            
+            $updatequery = "update users set password='$password' where fullname = '$name'";
+
         }else {
             echo "<script>alert('Your can't use you old password.');</script>";
         }
