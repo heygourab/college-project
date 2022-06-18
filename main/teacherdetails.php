@@ -149,10 +149,10 @@ $joining = $data[12];
                 <h2>Teacher's Material Status & and Date of Birth</h2>
                 <table> 
                     <thead>
-                        <tr>
+                        <td>
                             <th>Material Status</th>
                             <th>Date of Birth</th>
-                        </tr>
+                        </td>
                     </thead>
                     <tbody>
                         <td>

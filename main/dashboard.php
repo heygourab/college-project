@@ -229,10 +229,10 @@ switch($total_students){
                     <!-- php student database -->
                     <tbody>
                         <td>
-                            <!-- <h3><?php echo $recentStudent1 ?></h3> -->
+                            <h3><?php echo $recentStudent1 ?></h3>
                         </td>
                         <td>
-                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
+                            <h3><?php echo $recentStudent_course1 ?></h3>
                         </td>
                         <td>
                             <h3>Done</h3>
@@ -244,10 +244,10 @@ switch($total_students){
 
                     <tbody>
                         <td>
-                            <!-- <h3><?php echo $recentStudent2 ?></h3> -->
+                            <h3><?php echo $recentStudent2 ?></h3>
                         </td>
                         <td>
-                            <!-- <h3><?php echo $recentStudent_course2 ?></h3> -->
+                            <h3><?php echo $recentStudent_course2 ?></h3>
                         </td>
                         <td>
                             <h3>Done</h3>
