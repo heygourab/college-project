@@ -4,6 +4,7 @@ if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -99,139 +100,42 @@ if (!isset($_SESSION['fullname'])) {
         <!-- End of Aside -->
         <main>
             <h1>All Payments Information</h1>
-            <div class ='payments-info'>
-                <h2>
-                    Recent Student 
-                </h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                Student Name
-                            </th>
-                            <th>
-                                Student Course
-                            </th>
-                            <th>
-                                Enter Fees Amount
-                            </th>
-                            <th>
-                                Select Payment Status
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <td>
-                            <h3>
-                                Gourab Sarkar
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                BCA(H)
-                            </h3>
-                        </td>
-                        <td>
-                            <div class="input-box">
-                                <input type="number" placeholder="Enter Student Fees Amount" name="secondary-mark" required>
-                            </div>
-                        </td>
-                        <td>
-                            <select name="payment" id="payment" class="form-control" required>
-                                <option value="Male">Panding</option>
-                                <option value="Female">Done</option>
-                                <option value="Other">Unsuccessful</option>
-                            </select>
-                        </td>
-                    </tbody>
-                    
-                </table>
-            </div>
-            <div class="recentpending-students">
-                <h2>Pending Payments Students</h2>
-                <table> 
-                    <thead>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Phone Number</th>
-                            <th>Email</th>
-                            <th>Course</th>
-                            <th>Status</th>
-                            
-                        </tr>
-                    </thead>
-                    <!-- php student database -->
-                    <tbody>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
-                        </td>
-                    </tbody>
-                    <tbody>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
-                        </td>
-                        <td>
-                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
-                        </td>
-                    </tbody>
-                </table>
+            <div class="insights">
+                <div class="students-count">
+                    <span class="material-icons-sharp"> payments </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Panding Payments</h3>
+                            <!-- <h1><?php echo $total_students ?></h1> -->
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- End of Students count -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> payments </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Successful Payments</h3>
+                            <!-- <h1><?php echo $total_teachers ?></h1> -->
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- end of total-courses -->
+                <div class="students-count">
+                    <span class="material-icons-sharp"> payments </span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Unsuccessful Payments</h3>
+                            <h1>₹ 10,000</h1>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
             </div>
         </main>
+        <!-- End of Main -->
         <div class="right">
             <div class="top">
                 <!-- menu-dtn -->

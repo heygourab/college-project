@@ -190,17 +190,6 @@ switch($total_students){
                     </div>
                     <small class="text-muted">Last 24 Hours</small>
                 </div>
-                <!-- end of Teachers-count -->
-                <!-- <div class="total-courses">
-                    <span class="material-icons-sharp"> local_library </span>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Courses</h3>
-                            <h1>5</h1>
-                        </div>
-                    </div>
-                    <small class="text-muted">Last 24 Hours</small>
-                </div> -->
                 <!-- end of total-courses -->
                 <div class="students-count">
                     <span class="material-icons-sharp"> account_balance </span>
