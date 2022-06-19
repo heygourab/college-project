@@ -147,10 +147,10 @@ if(isset($_POST['submit'])){
         $data = mysqli_fetch_row($result) ;
         $text = 'Teacher Found 😊';
         $teachername = $data[1]; 
-        $teacheremail = $data[4];
-        $teacherphonenumber = $data[5];
-        $token = $data[14]; 
-        $details = 'teacherdetalis.php?token=' . $token;
+        $teacheremail = $data[2];
+        $teacherphonenumber = $data[3];
+        $token = $data[11]; 
+        $details = 'teacherdetails.php?token=' . $token;
     } else {
         $text = 'Teacher Not Found 😖';
         $teachername = '😖';
@@ -389,7 +389,7 @@ if(isset($_POST['submit'])){
                             <h3><?php echo $teacheremail ?></h3>
                         </td>
                         <td>
-                            <a href="">Details</a>
+                        <a href='<?php echo $details?>'>Details</a>
                         </td>
                     </tbody>
                 </table>

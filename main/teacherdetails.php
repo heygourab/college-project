@@ -149,10 +149,10 @@ $joining = $data[12];
                 <h2>Teacher's Material Status & and Date of Birth</h2>
                 <table> 
                     <thead>
-                        <td>
+                        <tr>
                             <th>Material Status</th>
                             <th>Date of Birth</th>
-                        </td>
+                        </tr>
                     </thead>
                     <tbody>
                         <td>
@@ -172,8 +172,16 @@ $joining = $data[12];
                         </tr>
                     </thead>
                     <tbody>
-                        <td><?php echo $department?></td>
-                        <td><?php echo $joining?></td>
+                        <td>
+                            <h3>
+                                <?php echo $department?>
+                            </h3>
+                        </td>
+                        <td>
+                            <h3>
+                                <?php echo $joining?>
+                            </h3>
+                        </td>
                     </tbody>
                 </table>
                     <h2>Teacher's Address</h2>

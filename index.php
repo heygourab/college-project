@@ -1,16 +1,17 @@
 <?php
-include 'config/config.php';
-session_start();
-error_reporting(0);
+include 'config/config.php';  //datakbase config file 
+session_start(); // for data flow control
+error_reporting(0); // for error_reporting
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $sql = "SELECT * FROM admin WHERE email='$email' AND password='$password'";
-    $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM admin WHERE email='$email' AND password='$password'"; //searching 
+    $result = mysqli_query($conn, $sql); 
+    
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $_SESSION['fullname'] = $row['fullname'];
+        $_SESSION['fullname'] = $row['fullname']; 
         header("Location:main/dashboard.php");
     } else {
         echo "<script>alert('This Email or Password is invalid');</script>";

@@ -60,8 +60,10 @@ if (isset($_POST['submit'])) {
                 <!--username-->
             </div>
             <div class="input_group">
-                <input type="fullname" placeholder="Full Name" name="fullname" value="<?php echo $fullname; ?>" required>
+                <input type="fullname" placeholder="Full Name" name="fullname" value="<?php echo $fullname; ?>" required> 
+                 <!-- fullname -->
             </div>
+          
             <div class="input_group">
                 <input type="email_id" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
                 <!--email-->

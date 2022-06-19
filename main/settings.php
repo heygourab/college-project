@@ -3,9 +3,6 @@ session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
-
-
-
 $name = $_SESSION['fullname'];
 
 if (isset($_POST['submit'])) {
@@ -38,7 +35,6 @@ if (isset($_POST['submit'])) {
     }
 }
 
-$sql = mysqli_query($conn, "SELECT * FROM admin WEHRE fullname = '" . $_SESSION['fullname'] . "'");
 
 ?>
 
