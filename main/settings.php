@@ -3,8 +3,6 @@ session_start();
 if (!isset($_SESSION['fullname'])) {
     header("Location: index.php");
 }
-$name = $_SESSION['fullname'];
-
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -149,28 +147,22 @@ if (isset($_POST['submit'])) {
                             <th>
                                 Admin Email
                             </th>
-                            <th>
-                                Admin PhoneNumber
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <td>
                             <h3>
-                                Gourab Sarkar
+                                <?php echo $_SESSION['fullname'] ?></h3>
                             </h3>
                         </td>
                         <td>
                             <h3>
-                                BCA(H)
+                                <?php echo $_SESSION['username'] ?>
                             </h3>
                         </td>
                         <td>
-                            <h3>email_id</h3>
-                        </td>
-                        <td>
                             <h3>
-                                000000
+                                <?php echo $_SESSION['email'] ?>
                             </h3>
                         </td>
                     </tbody>
@@ -182,13 +174,20 @@ if (isset($_POST['submit'])) {
                             <th>
                                 Admin Password
                             </th>
-
+                            <th>
+                                Joining Date
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <td>
                             <h3>
-                                password123
+                                <?php echo $_SESSION['password'] ?>
+                            </h3>
+                        </td>
+                        <td>
+                            <h3>
+                                <?php echo $_SESSION['joining_date'] ?>
                             </h3>
                         </td>
                     </tbody>

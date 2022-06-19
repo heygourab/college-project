@@ -11,7 +11,11 @@ if (isset($_POST['submit'])) {
     
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
-        $_SESSION['fullname'] = $row['fullname']; 
+        $_SESSION ['fullname'] = $row['fullname'];
+        $_SESSION ['username'] = $row['username'];
+        $_SESSION ['email'] = $row['email'];
+        $_SESSION ['password'] = $row['password'];
+        $_SESSION ['joining_date'] = $row['datetime'];
         header("Location:main/dashboard.php");
     } else {
         echo "<script>alert('This Email or Password is invalid');</script>";

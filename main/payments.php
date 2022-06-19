@@ -5,6 +5,7 @@ if (!isset($_SESSION['fullname'])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -146,6 +147,90 @@ if (!isset($_SESSION['fullname'])) {
                     
                 </table>
             </div>
+            <div class="recentpending-students">
+                <h2>Pending Payments Students</h2>
+                <table> 
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Status</th>
+                            
+                        </tr>
+                    </thead>
+                    <!-- php student database -->
+                    <tbody>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
+                        </td>
+                    </tbody>
+                    <tbody>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
+                        </td>
+                    </tbody>
+                    <tbody>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
+                        </td>
+                    </tbody>
+                    <tbody>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_name1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_phone1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_email1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_course1 ?></h3> -->
+                        </td>
+                        <td>
+                            <!-- <h3><?php echo $recentStudent_status ?></h3> -->
+                        </td>
+                    </tbody>
+                </table>
+            </div>
         </main>
         <div class="right">
             <div class="top">
@@ -174,17 +259,13 @@ if (!isset($_SESSION['fullname'])) {
                 <div class="note">
                     <div class="message">
                         <p>
-                            <b>
-                                Student Payment Update </b>
-                            </b>
+                            <b>Student Payment Update </b>
                             Don't worry use the update button for update the student payment.
                         </p>
                     </div>
                     <div class="message">
                         <p>
-                            <b>
-                                Studnent Payment Status Search </b>
-                            </b>
+                            <b>Studnent Payment Status Search </b>
                             Use the Search button for Student Payment Status Search.
                         </p>
                     </div>

@@ -396,6 +396,7 @@ if(isset($_POST['submit'])){
                         </td>
                     </tbody>
                 </table>
+            </div>
             <!-- end of recent-students -->
             <div class="student-search">
                 <h2><?php echo $text ?></h2>
