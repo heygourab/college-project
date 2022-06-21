@@ -257,16 +257,16 @@ main .insights small {
   display: block;
 }
 
-/*  */
+/* end of insights */
 
-main .payments-info h2 {
+main .recent-students h2 {
   margin-top: 0.8rem;
   color: white;
   margin-bottom: 0.8rem;
   text-align: center;
 }
 
-main .payments-info table {
+main .recent-students table {
   background: rgba(27, 27, 27, 0.651);
   backdrop-filter: saturate(180%) blur(10px);
   padding: 20px;
@@ -276,7 +276,7 @@ main .payments-info table {
   color: white;
   /* box-shadow: var(--box-shadow); */
 }
-main .payments-info table th {
+main .recent-students table th {
   font-size: 20px;
 }
 
@@ -312,7 +312,7 @@ select,input {
   padding: 10px 10px;
   font-size: 12px;
   color: rgb(220, 220, 220);
-  border-radius: 20px;
+  border-radius: 10px;
   background: transparent; /* transparent */
   outline: none;
   transition: 0.3s;
@@ -498,14 +498,77 @@ main table tbody td a:hover {
 /* END OF NOTES */
 
 .right .btn-container {
+  padding-left: 5rem;
+  display: flex;
+}
+
+.right .btn-container .button {
+  
+  margin-top: 10rem;
+  min-width: 200px;
+  min-height: 50px;
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--color-active);
+  background: linear-gradient(
+    90deg,
+    var(--color-active) 0%,
+    var(--color-hover) 100%
+  );
+  border: none;
+  border-radius: 30px;
+  box-shadow: 12px 12px 24px var(--box-shadow);
+  transition: all 0.300s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  position: absolute;
+  
+}
+
+.right .btn-container .button:hover{
+  background: var(--color-warning)
+}
+
+main .student-search {
   margin-top: 1rem;
-  padding-left: 5rem;
-  display: flex;
 }
 
-.right  .btn-container-update {
-  margin: top 1rem;
-  padding-left: 5rem;
-  display: flex;
+main .student-search h2 {
+  color: white;
+  margin-bottom: 0.8rem;
+  text-align: center;
 }
 
+main .found-student table {
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+main .student-search {
+  margin-top: 1rem;
+}
+
+main .student-search h2{
+  color :white;
+  margin-bottom: 0.8rem;
+}
+
+main .student-search table {
+  background: rgba(27, 27, 27, 0.651);
+  backdrop-filter: saturate(180%) blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
